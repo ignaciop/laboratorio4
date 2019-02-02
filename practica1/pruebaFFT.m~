@@ -21,7 +21,7 @@ nfft = 1024; %numero de puntos de la FFT
 Y = fft(x,nfft); %tomar la FFT y llenar de ceros de manera que el largo de la FFT sea nfft
 Y = Y(1:nfft/2); %la FFT es simetrica, tiro la mitad
 my = abs(Y).^2; %potencia espectral
-f = (0:nfft/2-1)*Fs/nfft; %vector de frecuencias
+f = (0:nfft/2-1)*Fs/nfft
 
 figure(1)
 plot(t,x)
