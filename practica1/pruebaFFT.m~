@@ -1,36 +1,55 @@
-%T=10
-%t=0:0.01:T-0.01
-%w=10
-%x=sin(w*t)+0.5*sin(3*w*t)
+%%
+data = load('data.txt');
 
-%figure(1);plot(t,x)
 
-%X=abs(fft(x))
-
-%dk=1/T
-
-%k=0:dk:dk*length(t)-dk
-%figure(2),plot(k,X)
-
-Fs = 150; %frecuencia de sampleo en Hz
-t = 0:1/Fs:1; %vector tiempo de 1 seg
-f = 10; %frecuencia de la onda senoidal
-x = sin(2*pi*f*t); %onda senoidal
-
-nfft = 1024; %numero de puntos de la FFT
-Y = fft(x,nfft); %tomar la FFT y llenar de ceros de manera que el largo de la FFT sea nfft
-Y = Y(1:nfft/2); %la FFT es simetrica, tiro la mitad
-my = abs(Y).^2; %potencia espectral
-f = (0:nfft/2-1)*Fs/nfft
+fraq = 1000;
+T = 60;
+x = 0:1/fraq:T-1/fraq;
 
 figure(1)
-plot(t,x)
-title('señal');
-xlabel('Tiempo (s)')
-ylabel('Amplitud')
+plot(x,data)
+
+
+nn=1000000;
+Y1=abs(fft(data,nn))/length(x)*2;
+
+dw=2*pi/(T*length(Y1)/length(x)) % esta es la resolución en frecuencia angular
+w=dw*(0:(length(Y1))-1); % este es el vector de frecuencias angulares
+f=w/2/pi; % dividiendo por 2pi se obtiene la frecuencia
 
 figure(2)
-plot(f,my)
-title('Espectro de potencia')
-xlabel('Frecuencia (Hz)')
-ylabel('Potencia')
+plot(f,Y1)
+grid on
+xlabel('Frecuencia [Hz]')
+title('Transformada de los datos')
+
+
+%%
+dt=pi/1000 % periodo de adquisición de la senial
+T=32*pi;    % tiempo total de la medición
+t=0:dt:T-dt; %vector de tiempos
+
+A=[0 0.5 0.25]; % vector de aplitudes para 3 frecuencias
+wo=[2 10 25]*2*pi;  % frecuencias que componen la senial a analizar
+y1=A(1)*cos(wo(1)*t)+A(2)*cos(wo(2)*t)+A(3)*cos(wo(3)*t); % senial adquirida
+
+%figure(1),plot(t,A(1)*sin(w(1)*t),t,A(2)*sin(w(2)*t),t,A(3)*sin(w(3)*t));axis([0 12.6 -1 1]),grid on
+figure(1),plot(t,A(2)*sin(wo(2)*t),t,A(3)*sin(wo(3)*t));axis([0 1 -.6 .6]),grid on
+xlabel('tiempo [s]')
+title('Serie temporal de cada frecuencia (cosenos 10 Hz y 25 Hz)')
+
+figure(2),plot(t,y1);axis([0 1 -1 1]),grid on
+xlabel('frecuencia [Hz]')
+title('senial y1 (suma de cosenos 10 Hz y 25 Hz)')
+nn=1000000
+Y1=abs(fft(y1,nn))/length(t)*2; % hago la transformada de fourier, el 1000000 es para completar el vector a analizar con ceros - mejora la estética del gráfico
+
+dw=2*pi/(T*length(Y1)/length(t)) % esta es la resolución en frecuencia angular
+w=dw*(0:(length(Y1))-1); % este es el vector de frecuencias angulares
+f=w/2/pi; % dividiendo por 2pi se obtiene la frecuencia
+
+figure(3),plot(f,Y1);grid on
+xlabel('frecuencia [Hz]')
+title('Transformada de suma de cosenos 10 Hz y 25 Hz')
+
+axis([0 50 0 .6])

@@ -43,5 +43,8 @@ s.Rate = 10000;
 
 %get data
 data =  startForeground(s);
+
+%save('data.txt','data','-ascii')
+
 %plot measured data
 plot (diff(data(:,1)))
