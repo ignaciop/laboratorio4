@@ -1,5 +1,5 @@
 %%
-data = load('data.txt');
+data = load('dataLatonFinoL5.txt');
 
 
 fraq = 1000;
@@ -28,16 +28,15 @@ title('Transformada de los datos')
 %%
 % Obtengo la envolvente
 
-env = hilbert(data);  % transformada de hilbert de los datos
-envp = abs(env);     % envp: la envolvente
-
-figure(3)
-plot(x,envp)
+[PKS,LOCS] = findpeaks(data,'MinPeakHeight',0.015);  % busco picos
+figure(3),plot(x(LOCS),PKS,'o',x,data)
+%figure(3)
+%plot(x,envp)
 
 %%
 % Busco alfa haciendo un fiteo exponencial
-ft = fit(x',envp,'exp1')
+ft = fit(x(LOCS)',PKS,'exp1')
 
-figure(4)
-plot(ft)
-grid on
+%figure(4)
+%plot(ft)
+%grid on
