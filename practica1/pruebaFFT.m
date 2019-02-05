@@ -24,3 +24,20 @@ plot(f,Yp)
 grid on
 xlabel('Frecuencia [Hz]')
 title('Transformada de los datos')
+
+%%
+% Obtengo la envolvente
+
+env = hilbert(data);  % transformada de hilbert de los datos
+envp = abs(env);     % envp: la envolvente
+
+figure(3)
+plot(x,envp)
+
+%%
+% Busco picos
+p = findpeaks(data);
+
+figure(4)
+plot(p)
+grid on
