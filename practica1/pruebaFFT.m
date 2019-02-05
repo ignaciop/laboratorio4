@@ -35,9 +35,9 @@ figure(3)
 plot(x,envp)
 
 %%
-% Busco picos
-p = findpeaks(data);
+% Busco alfa haciendo un fiteo exponencial
+ft = fit(x',envp,'exp1')
 
 figure(4)
-plot(p)
+plot(ft)
 grid on
