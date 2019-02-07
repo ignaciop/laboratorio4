@@ -1,5 +1,5 @@
 %%
-data = load('dataLatonFinoL5.txt');
+data = load('dataLatonL1.txt');
 
 
 fraq = 1000;
@@ -9,6 +9,8 @@ x = 0:1/fraq:T-1/fraq;
 
 figure(1)
 plot(x,data)
+xlabel('Tiempo (seg)')
+title('Señal del fotodiodo')
 
 
 nn=60000;
@@ -23,13 +25,15 @@ figure(2)
 plot(f,Yp)
 grid on
 xlabel('Frecuencia [Hz]')
-title('Transformada de los datos')
+title('Frecuencias')
 
 %%
 % Obtengo la envolvente
 
 [PKS,LOCS] = findpeaks(data,'MinPeakHeight',0.015);  % busco picos
 figure(3),plot(x(LOCS),PKS,'o',x,data)
+xlabel('Tiempo (seg)')
+title('Señal original y envolvente')
 %figure(3)
 %plot(x,envp)
 
