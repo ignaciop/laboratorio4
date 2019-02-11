@@ -80,7 +80,7 @@
 \date{Grupo 3 - Laboratorio 4, C\'atedra Schmiegelow - Departamento de F\'isica, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires \newline \\ \today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent En este trabajo se midi\'o el m\'odulo de elasticidad de Young de diferentes materiales a partir de la flexi\'on de una barra de lat\'on en voladizo, utilizando dos m\'etodos: est\'atico y dinamico. En el primero se analizaron patrones de difracci\'on obtenidos por la luz de un laser a traves de una rendija en un extremo de una barra, y en el segundo se obtuvieron las frecuencias de oscilaci\'on y la constante de amortiguamiento de barras de distintos materiales mediante un fotodiodo.
+\noindent En este trabajo se midi\'o el m\'odulo de elasticidad de Young de diferentes materiales a partir de la flexi\'on de una barra en voladizo, utilizando dos m\'etodos: est\'atico y dinamico. En el primero se analizaron patrones de difracci\'on obtenidos por la luz de un laser a traves de una rendija en un extremo de una barra, y en el segundo se obtuvieron las frecuencias de oscilaci\'on y la constante de amortiguamiento de barras de distintos materiales mediante un fotodiodo.
 \end{abstract}
 }
 
@@ -137,7 +137,7 @@ Mediante la ecuaci\'on (\ref{eq:viga}) se puede determinar el apartamiento verti
 y(x) = -\frac{32mg}{\pi d^{4}E}(Lx^{2} - \frac{1}{3}x^{3})
 \end{equation}
 
-siendo $L$ y $d$ el largo y di\'ametro de la barra respectivamente.\newline
+siendo $L$ y $d$ el largo y di\'ametro de la barra respectivamente; y $m$ la masa de los pesos utilizados.\newline
 
 
 \subsection{M\'etodo din\'amico}
@@ -158,7 +158,7 @@ La soluci\'on para $Y(t)$ resulta ser una senoidal amortiguada, con amortiguamie
 \omega_{k} = 2\pi f_{k} = \sqrt{\frac{IE}{\rho_{l}}k^{4} - \alpha^2}
 \end{equation}
 
-siendo $\alpha = \frac{IE}{2\rho_{l}}b$ la constante de amortiguamento de la barra, $I = \frac{\pi d^4}{64}$ su momento de inercia y $\rho_{l}$ la densidad por unidad de longitud. \newline
+siendo $\alpha = \frac{IE}{2\rho_{l}}b$ la constante de amortiguamento de la barra, $I = \frac{\pi d^4}{64}$ su momento de inercia y $\rho_{l}$ la densidad lineal de masa por unidad de longitud. \newline
 
 La soluci\'on para la parte espacial es $X(x) = Acos(kx) + Bsen(kx) + Ccosh(kx) + Dsenh(kx)$; la cual junto a las condiciones de contorno (barra en voladizo) $X(0) = X'(0)$ y $X''(L) = X'''(L) = 0$ dan la siguiente ecuaci\'on para los posibles valores de $k$:
 
@@ -330,7 +330,7 @@ Para finalizar, se analiz\'o como var\'ia la frecuencia fundamental y el factor 
 Puede apreciarse en los gr\'aficos que la frecuencia fundamental va aumentando al disminuir la longitud; dado que a menor longitud el material es mas r\'igido por lo tanto oscilar\'a a mayor frecuencia, destacando desproporcionadamente a la fundamental sobre los arm\'onicos, siendo estos \'ultimos pr\'acticamente imperceptibles en este caso. \newline
 
 Por el contrario, si observamos el gr\'afico para el factor de amortiguamiento $\alpha$ en funci\'on de la longitud $L$; se puede destacar que para $L < L_{4} = 28,3$ cm, $\alpha$ decrece por lo tanto la barra oscilar\'a durante m\'as tiempo ocasionando que el espectro de frecuencias sea m\'as parejo, con el costo de introducir una mayor cantidad de frecuencias no deseadas.
-A partir de $L > L_{4} = 28,3$ cm, $\alpha$ vuelve a crecer hasta alcanzar un valor m\'aximo en $L_{2} = 36,3$.
+A partir de $L > L_{4} = 28,3$ cm, $\alpha$ vuelve a crecer hasta alcanzar un valor m\'aximo en $L_{2} = 36,3$ cm. De estos valores, se pueden inferir dos comportamientos: como un sistema sobreamortiguado para $L < L_{4}$; mientras que para $L > L_{4}$ el sistema se tiende a estar amortiguado de manera cr\'itica. 
 
 Cabe aclarar que, para esta parte de la experiencia, se intent\'o tomar longitudes m\'as cortas a $L_{6} = 20,3$ cm, pero observamos que los datos recolectados eran muy similares a una barra en reposo, por lo tanto no generaban valores significativos de $f$ y $\alpha$.
 
@@ -338,12 +338,24 @@ Cabe aclarar que, para esta parte de la experiencia, se intent\'o tomar longitud
 
 \section{Conclusiones}
 
-Comparando los valores obtenidos de la resistencia en los distintos ajustes (lineal, cuadr\'atico y c\'ubico), se encontr\'o que el modelo que mejor explica los datos recolectados es el cuadr\'atico con todos sus par\'ametros libres ($R^2$ = 0,99999), esto quiere decir que este modelo explica en gran medida los datos obtenidos. Su F-valor de 1E6 muestra que es muy improbable que este polinomio ajustara de forma aleatoria. Al observar los residuos de este ajuste, se not\'o que parecen ser independientes de la intensidad, indicando que el ajuste realizado es un buen modelo para caracterizar el sistema.
-\par
+En en el presente trabajo se calcul\'o el m\'odulo de elasticidad de Young de diferentes materiales mediante de la flexi\'on de una barra de lat\'on en voladizo. Para eso, se utilizaron dos m\'etodos: uno est\'atico y otro din\'amico. En el m\'etodo est\'atico se analizaron patrones de difracci\'on obtenidos por la luz de un laser a traves de una rendija en un extremo de una barra
 
-En el ajuste lineal, es posible notar una fuerte dependencia, similar a una cuadr\'atica, de los residuos en funci\'on de la intensidad. Debido a esto, se podr\'ia considerar que en el caso de la l\'ampara incandescente, la ecuaci\'on (\ref{eq:ohm2}) no es aplicable directamente, sino que se tuvo que considerar el efecto de la temperatura.
 
-El ultimo ajuste realizado fue el c\'ubico, que coincidi\'o en gran parte con los valores dados por el cuadr\'atico ($R^2$ y residuos). Sin embargo, al observar los T-valores para los distintos par\'ametros, estos fueron considerablemente peores que en el anterior. En particular para el coeficiente c\'ubico se observa un bajo T-valor, lo que mostr\'o que este tercer par\'ametro tiene una baja significancia.
+
+
+
+En el m\'etodo din\'amico, se obtuvieron las frecuencias de oscilaci\'on y la constante de amortiguamiento de tres barras: dos de lat\'on (diferenciandose en su diametro y longitud) y otra de hierro. 
+
+Con los datos obtenidos, se realizo un ajuste para poder obtener el factor de amortiguamiento $\alpha$ para las tres barras, tomando como longitud total de cada barra las expuestas en la Tabla \ref{tab:params_barras}.
+
+Luego, se obtuvieron las frecuencias de resonancia realizando una transformada de Fourier a la se\~nal original. Pudimos ver a frecuencia fundamental y los primeros arm\'onicos, no obstante entre estos exist\'ian frecuencias que no correspond\'ian a modos de resonancia de la barra si no a diversos factores como un efecto rebote introducido por el movimiento oscilante de la misma registrado por el fotodiodo. \newline
+
+En la pr\'actica, para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del modo fundamental; como se menciono en el p\'arrafo anterior, logramos obtener las frecuencias del primer y segundo arm\'onico, las cuales resultaron dif\'iciles de visualizar dado que los picos correspondientes a estas frecuencias eran muy peque\~nos con respecto al del fundamental. \newline
+
+Por \'ultimo, se estudi\'o la variaci\'on de la frecuencia fundamental y el factor de amortiguamiento en funci\'on de la longitud para la barra de lat\'on fino, con lo cual concluimos que
+la frecuencia fundamental aumenta al disminuir la longitud de manera exponencial; esto puede deberse a que, a menor longitud, el material adquiere m\'as r\'igidez, por lo tanto oscila a frecuencias m\'as altas, destacando a la fundamental sobre sus arm\'onicos, siendo \'estos \'ultimos muy dif\'iciles de ver en los espectros. \newline
+
+Por otro lado, al observar el factor de amortiguamiento $\alpha$ en funci\'on de la longitud se pudo observar que decrec\'ia para los valores mas bajos de longitud; luego se llegaba a un valor de $\alpha$ m\'inimo (en nuestro caso el correspondiente a $L_{4} = 28,3$ cm) para volver a crecer y alcanzar un m\'aximo en $L_{2} = 36,3$ cm. Puede concluirse que este sistema se comporta como un sistema sobreamortiguado para $L < L_{4}$; mientras que para la regi\'on $L > L_{4}$ es comparable con un sistema con amortiguamiento cr\'itico. 
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
