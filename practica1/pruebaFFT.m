@@ -1,5 +1,5 @@
 %%
-data = load('dataLatonL1.txt');
+data = load('dataLatonFinoL1.txt');
 
 
 fraq = 1000;
