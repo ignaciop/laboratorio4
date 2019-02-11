@@ -33,6 +33,10 @@
 
 \usepackage[hang, small,labelfont=bf,up,textfont=up]{caption} % Custom captions under/above floats in tables or figures
 
+\usepackage[section]{placeins}
+
+\usepackage{float}
+
 \usepackage{booktabs} % Horizontal rules in tables
 
 \usepackage{enumitem} % Customized lists
@@ -111,7 +115,7 @@ A la ecuaci\'on (\ref{eq:leyHooke}) se la conoce como \textbf{ley de Hooke}, y s
 
 Si se toma una superficie cualquiera en el interior de la barra, las part\'iculas que est\'an a cada uno de los lados ejercer\'an fuerzas sobre las part\'iculas que se encuentran del lado opuesto, y estas fuerzas cumplen con el principio de acci\'on y reacci\'on. De acuerdo a la direcci\'on de esas fuerzas interiores, para cada secci\'on transversal se manifestar\'an momentos flectores (esfuerzos transversales que sufre la barra) y momentos torsores (esfuerzos de corte), como muestra la Figura (\ref{fig:momentos}):
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{momentos.jpg}
 \caption{a) Esfuerzos transversales en una barra (momento flector). b) Esfuerzos de corte (momento torsor).}
 \label{fig:momentos}
@@ -172,21 +176,18 @@ Por cuestiones pr\'acticas al momento del c\'alculo, nos quedaremos s\'olo con $
 
 \section{Dispositivo experimental}
 
-Los instrumentos de laboratorio utilizados fueron:
+Los instrumentos de laboratorio utilizados en ambos m\'etodos fueron:
 \begin{itemize}
 \item 
-\label{Fuente} Fuente de corriente continua, Hantek PPS-2320A (R\'otulo: FC-04)
-\cite{Fuente}
-\item 
-\label{amp} Mult\'imetro Protek 506, utilizado como amper\'imetro (R\'otulo: 4, Resistencia interna: $\sim$ 0,5 $\Omega$)
-\cite{amp}
-\item 
-\label{volt} Mult\'imetro UNI-T UT55, utilizado como volt\'imetro (R\'otulo: 2, Resistencia interna: 10 M$\Omega$)
-\cite{volt}
-\item L\'ampara incandescente
+\label{Laser} L\'aser marca Melles Griot, modelo 06DAL003 de 670 nm.
+\item Espejos marca Melles Griot.
+\item Pesos y soporte para pesos.
+\item Barras de lat\'on y de hierro de diferentes longitudes y pesos.
+\item Rendija de metal.
+\item Fotodiodo marca ThorLabs, modelo DET36A/M.
+\item Placa de adquisici\'on de datos marca National Instruments, modelo NIUSB-6212.
+\item Computadora personal con software MATLAB para la recolecci\'on y an\'alisis de datos.
 \end{itemize}
-
-PUEDE SER QUE VAYAN LOS ELEMENTOS LISTADOS AL PRINCIPIO O EN CADA EXPERIMENTO...
 
 \subsection{M\'etodo est\'atico}
 
@@ -194,7 +195,7 @@ PUEDE SER QUE VAYAN LOS ELEMENTOS LISTADOS AL PRINCIPIO O EN CADA EXPERIMENTO...
 
 Para este m\'etodo se utiliz\'o pr\'acticamente el mismo dispositivo experimental que en el est\'atico, con la excepci\'on de que se quitaron los pesos y se utilizaron dos barras de lat\'on (diferenciandose entre s\'i por su di\'ametro, longitud y peso) y otra de hierro. En la siguiente tabla se detallan los valores tomados para cada barra:\newline
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Di\'ametros $d$, longitudes $L$ y pesos $m$ de las tres barras utilizadas.}
 \label{tab:valoresbarras}
@@ -211,7 +212,7 @@ Lat\'on fino & 0,243 cm & 40,30 cm & 22,02 g \\ \hline
 Adem\'as, se agreg\'o un fotodiodo de \ce{^{28}_{14}Si} marca ThorLabs modelo DET36A/M justo detr\'as del extremo libre de la barra para poder registrar las oscilaciones verticales de la misma. \newline
 \'Este \'ultimo se conect\'o a una placa de adquisici\'on de datos marca National Instruments NIUSB-6212, y mediante un programa hecho en MATLAB se registr\'o, durante 60 segundos y a una frecuencia de 1000 Hz, la se\~nal capturada por el fotodiodo. En la Figura (\ref{fig:dispexp_dinamico}) se muestra este arreglo experimental.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{dispexp_dinamico.jpg}
 \caption{Dispositivo experimental utilizado en el m\'etodo din\'amico. Se pueden ver los siguientes elementos: A) L\'aser, B) Barra y soporte, C) Espejos para redireccionar el haz hacia el extremo libre de la barra, D) Fotodiodo.}
 \label{fig:dispexp_dinamico}
@@ -222,7 +223,7 @@ Cabe destacar que, para poder estar seguros de que la frecuencia de 1000 Hz eleg
 La determinaci\'on del factor de amortiguamiento $\alpha$ se llevo a cabo mediante un ajuste sobre la se\~nal original con una forma funcional senoidal amortiguada exponencialmente.
 Para calcular las frecuencias $f_{k}$, se realiz\'o un an\'alisis de Fourier sobre la se\~nal obtenida por el fotodiodo y as\'i poder obtener el valor del m\'odulo de Young $E$ mediante la ecuaci\'on (\ref{eq:omegas}) y la constante de amortiguamiento previamente calculada.
 
-Por \'ultimo, para la barra de lat\'on fino se analiz\'o como varia la frecuencia fundamental y el factor de amortiguamiento en funci\'on de la longitud de la barra (cambiando la posici\'on del extremo fijo de la misma), partiendo de $L_{1} = 40,3 \pm 0,1$ cm, en decrementos de 4 cm, hasta $L_{7} = 16,3 \pm 0,1$ cm.
+Por \'ultimo, para la barra de lat\'on fino se analiz\'o como varia la frecuencia fundamental y el factor de amortiguamiento en funci\'on de la longitud de la barra (cambiando la posici\'on del extremo fijo de la misma), partiendo de $L_{1} = 40,3 \pm 0,1$ cm, en decrementos de 4 cm, hasta $L_{6} = 20,3 \pm 0,1$ cm.
 
 
 
@@ -238,27 +239,27 @@ Con los datos obtenidos de la se\~nal enviada por el fotodiodo, se realizo un aj
 
 En la siguiente figura, se puede observar que la se\~nal decae en el tiempo como una sinoidal con una envolvente exponencial. Tambi\'en se puede ver que se marcaron los picos de cada m\'aximo, para luego poder obtener el factor $\alpha$ mediante el ajuste mencionado al principio.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{senalenvolvente.jpg}
 \caption{Se\~nal obtenida para la barra de lat\'on y su envolvente.}
 \label{fig:senalenvolvente}
 \end{figure}
 
-Luego, se obtuvieron las frecuencias de resonancia de cada barra mediante an\'alisis de Fourier. Como se dijo en la Introducci\'on, para la adquisici\'on de los datos se fijo un tiempo de 60 segundos y una frecuencia de sampleo de 1000 Hz. Al calcular la transformada de Fourier de la se\~nal y obtener las frecuencias, se noto que si bien aparec\'ia la fundamental y los primeros dos arm\'onicos, entre estos exist\'ian frecuencias que no correspond\'ian a modos de resonancia de la barra si no a factores tales como ruido en la linea ???? MEJORAR ESTO
+Luego, se obtuvieron las frecuencias de resonancia de cada barra mediante an\'alisis de Fourier. Como se dijo en la Introducci\'on, para la adquisici\'on de los datos se fijo un tiempo de 60 segundos y una frecuencia de sampleo de 1000 Hz. Al calcular la transformada de Fourier de la se\~nal y obtener las frecuencias, se noto que si bien aparec\'ia la fundamental y los primeros dos arm\'onicos, entre estos exist\'ian frecuencias que no correspond\'ian a modos de resonancia de la barra si no a factores tales como el efecto rebote introducido por el movimiento oscilante de la misma.
 
-Como ejemplo, en la siguiente figura se puede ver el espectro de frecuencias de la barra de lat\'on en su longitud original $L_{1} = 31,2 \pm 0,1$ cm. Pueden apreciarse la frecuencia fundamental $f_{1} \approx 20,2$ Hz y las correspondientes a los ruidos ($f \approx 40,4$ Hz, etc) . \newline
+Como ejemplo, en la siguiente figura se puede ver el espectro de frecuencias de la barra de lat\'on en su longitud original $L_{1} = 31,2 \pm 0,1$ cm. Pueden apreciarse la frecuencia fundamental $f_{1} \approx 20,20$ Hz y las correspondientes al efecto de rebote ($f \approx 40,41$ Hz, etc). \newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{espectrolaton.jpg}
-\caption{Parte del espectro de frecuencias para la barra de lat\'on. Se pueden observar la frecuencia fundamental $f_{1} \approx 20,2$ Hz y frecuencias de ruido.}
+\caption{Parte del espectro de frecuencias para la barra de lat\'on. Se pueden observar la frecuencia fundamental $f_{1} \approx 20,2$ Hz y frecuencias del rebote.}
 \label{fig:espectrolaton}
 \end{figure}
 
-Si bien para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del modo fundamental (y su correspondiente $k$), se pudo obtener las frecuencias del primer y segundo arm\'onico. Esto resulto mas dif\'icil de observar en los espectros debido a que los picos correspondientes a estas frecuencias era muy peque\~nos con respecto al del fundamental.\newline Siguiendo con el ejemplo de la barra de lat\'on, se calcularon dichas frecuencias mediante la ecuacion (\ref{eq:omegas}) junto con la constante de amortiguamiento $\alpha$, obteniendo los siguientes valores: $f_{1} \approx 20,2$ Hz, $f_{2} \approx 122,5$ Hz y $f_{3} \approx 354$ Hz. \newline
+Si bien para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del modo fundamental (y su correspondiente $k$), se pudo obtener las frecuencias del primer y segundo arm\'onico. Esto resulto mas dif\'icil de observar en los espectros debido a que los picos correspondientes a estas frecuencias era muy peque\~nos con respecto al del fundamental.\newline Siguiendo con el ejemplo de la barra de lat\'on, se calcularon dichas frecuencias mediante la ecuacion (\ref{eq:omegas}) junto con la constante de amortiguamiento $\alpha$, obteniendo los siguientes valores: $f_{1} \approx 20,20$ Hz, $f_{2} \approx 122,50$ Hz y $f_{3} \approx 354$ Hz. \newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{espectrolatonarmonico.jpg}
-\caption{Parte del espectro de frecuencias para la barra de lat\'on. Al aumentar el zoom en el espectro, se puede observar el primer arm\'onico con frecuencia $f_{2} \approx 122,5$ Hz, con una amplitud muy peque\~na en relaci\'on a $f_{1} \approx 20,2$ Hz}
+\caption{Parte del espectro de frecuencias para la barra de lat\'on. Al aumentar el zoom en el espectro, se puede observar el primer arm\'onico con frecuencia $f_{2} \approx 122,50$ Hz, con una amplitud muy peque\~na en relaci\'on a $f_{1} \approx 20,20$ Hz}
 \label{fig:espectrolatonarmonico}
 \end{figure}
 
@@ -266,36 +267,71 @@ Si bien para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del m
 En la siguiente tabla se detallan los valores de la frecuencia fundamental $f_{1}$ para las tres barras, utilizando $k_{1} = \frac{1,875}{L}$ y la constante de amortiguamiento $\alpha$ correspondiente a cada una con un nivel de confianza del 95\%:
 
 
-\begin{table}
+\begin{table}[H]
 \centering
 \caption{Frecuencias fundamentales y constantes de amortiguamiento para cada barra.}
 \label{tab:fya_barras}
 \begin{tabular}{|c|c|c|}
 \hline
 Material & $f_{1}$ (Hz) & $\alpha$ (Hz) \\ \hline
-Lat\'on & 20,2 & 0,0335\\ \hline
-Hierro & 21,78 & 0,1343  \\ \hline
-Lat\'on fino & 8,25 & 0,0190\\ \hline
+Lat\'on & 20,20 & 0,0335 $\pm$ 0,0009\\ \hline
+Hierro & 21,78 & 0,1343 $\pm$ 0,0009  \\ \hline
+Lat\'on fino & 8,25 & 0,0190 $\pm$ 0,0009\\ \hline
 \end{tabular}
 \end{table}
 
 
 Adem\'as, se calcul\'o la densidad lineal de cada barra a partir de su peso y longitud, as\'i como tambi\'en el momento de inercia $I$ de acuerdo a la geometr\'ia cil\'indrica de las mismas. Estos datos se encuentran en la siguiente tabla :
 
-TABLA CON L RHO I
+\begin{table}[H]
+\centering
+\caption{Valores de longitud $L$, densidad lineal $\rho_{l}$ y momento de inercia $I$ para cada barra.}
+\label{tab:params_barras}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Material & $L$ (cm) & $\rho_{l}$ (g/cm) & $I$ $(cm^{4})$\\ \hline
+Lat\'on & 31,2 $\pm$ 0,1 & 1,64 $\pm$ 0,01 & 0,0024 $\pm$ 0,0001\\ \hline
+Hierro & 36,1 $\pm$ 0,1 & 1,01 $\pm$ 0,01 & 0,0009 $\pm$ 0,0001\\ \hline
+Lat\'on fino & 40,3 $\pm$ 0,1 & 0,55 $\pm$ 0,01 & 0,0002 $\pm$ 0,0001\\ \hline
+\end{tabular}
+\end{table}
 
 
-Luego, mediante la ecuaci\'on (\ref{eq:omegas}) y los datos de las tablas anteriores se obtuvieron los valores de los m\'odulos de Young de cada una de las tres barras estudiadas:
+Luego, mediante la ecuaci\'on (\ref{eq:omegas}) y los datos de las Tablas \ref{tab:fya_barras} y \ref{tab:params_barras}, se obtuvieron los valores de los m\'odulos de Young de cada una de las tres barras estudiadas:
 
-tabla con young
+\begin{table}[H]
+\centering
+\caption{M\'odulo de Young $E$ de cada una de las tres barras.}
+\label{tab:young_barras}
+\begin{tabular}{|c|c|}
+\hline
+Material & $E$ (Pa)\\ \hline
+Lat\'on & $8,44 * 10^{10}$ $\pm$ 0,1\\ \hline
+Hierro & $2,89 * 10^{11}$ $\pm$ 0,1\\ \hline
+Lat\'on fino & $1,58 * 10^{11}$ $\pm$ 0,1\\ \hline
+\end{tabular}
+\end{table}
 
 Para finalizar, se analiz\'o como var\'ia la frecuencia fundamental y el factor de amortiguamiento en funci\'on de la longitud de la barra de lat\'on fino, con los par\'ametros mencionados al final de  la secci\'on 2.2
 
-GRAFICO FREC VS LONGITUD Y ALPHA VS LONGITUD.
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{fvsl.jpg}
+\caption{Frecuencias fundamentales de la barra de lat\'on fino en funci\'on de su longitud.}
+\label{fig:fvsl}
+\end{figure}
 
-Puede apreciarse en los gr\'aficos que la frecuencia fundamental va aumentando al disminuir la longitud; dado que a menor longitud el material es mas r\'igido por lo tanto oscilar\'a menos, destacando desproporcionadamente a la fundamental sobre los arm\'onicos, siendo estos \'ultimos pr\'acticamente imperceptibles en este caso. \newline
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{avsl.jpg}
+\caption{Factor de amortiguamiento de la barra de lat\'on fino en funci\'on de su longitud.}
+\label{fig:avsl}
+\end{figure}
 
-Por el contrario, si observamos el grafico para el factor de amortiguamiento $\alpha$ en funcion de la longitud $L$; a mayor longitud, menor es el amortiguamiento, por lo tanto la barra oscilar\'a durante m\'as tiempo ocasionando que el espectro de frecuencias sea m\'as parejo, con el costo de introducir una mayor cantidad de frecuencias no deseadas. EXPLICAR MEJOR ESTO
+Puede apreciarse en los gr\'aficos que la frecuencia fundamental va aumentando al disminuir la longitud; dado que a menor longitud el material es mas r\'igido por lo tanto oscilar\'a a mayor frecuencia, destacando desproporcionadamente a la fundamental sobre los arm\'onicos, siendo estos \'ultimos pr\'acticamente imperceptibles en este caso. \newline
+
+Por el contrario, si observamos el gr\'afico para el factor de amortiguamiento $\alpha$ en funci\'on de la longitud $L$; se puede destacar que para $L < L_{4} = 28,3$ cm, $\alpha$ decrece por lo tanto la barra oscilar\'a durante m\'as tiempo ocasionando que el espectro de frecuencias sea m\'as parejo, con el costo de introducir una mayor cantidad de frecuencias no deseadas.
+A partir de $L > L_{4} = 28,3$ cm, $\alpha$ vuelve a crecer hasta alcanzar un valor m\'aximo en $L_{2} = 36,3$.
+
+Cabe aclarar que, para esta parte de la experiencia, se intent\'o tomar longitudes m\'as cortas a $L_{6} = 20,3$ cm, pero observamos que los datos recolectados eran muy similares a una barra en reposo, por lo tanto no generaban valores significativos de $f$ y $\alpha$.
 
 %------------------------------------------------
 
