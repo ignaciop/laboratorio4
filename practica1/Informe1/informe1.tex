@@ -191,6 +191,22 @@ Los instrumentos de laboratorio utilizados en ambos m\'etodos fueron:
 
 \subsection{M\'etodo est\'atico}
 
+En el armado experimental (Figura \ref{fig:disenoestatico}) de este m\'etodo se utilizaron dos cuchillas que nos sirvieron para armar la rendija por la cual se producir\'ia la difracci\'on. Se fij\'o una de las cuchillas al extremo libre de la varilla de lat\'on (el di\'ametro de la varilla es de $d = 0.470 \pm 0.002cm$) y se fij\'o la otra cuchilla en un punto m\'as alto que la primera. De \'esta manera, al colocar diferentes pesos al extremo libre de la varilla, \'esta se deform\'o produciendo diferentes patrones de difracci\'on. Las masas utilizadas fueron las siguientes: $m_{1} = 22,57 g$, $m_{2} = 26,22 g$, $m_{3} = 20,66 g$, $m_{4} = 27,85 g$, $m_{5} = 28,48 g$, $m_{6} = 18,75 g$, $m_{7} = 12,66 g$, $m_{8} = 22,40 g$, cabe considerar que en estos valores est\'a incluida la masa del soporte utilizado, y por otro lado que las mediciones se efectuaron con una balanza de alta precisi\'on marca Ohaus Analytical Plus , modelo AP210, que tiene un error del \'orden de los miligramos y que por lo tanto no lo consideramos. \newline
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{disenoestatico.png}
+\caption{Disposici\'on experimental del m\'etodo est\'atico.}
+\label{fig:disenoestatico}
+\end{figure}
+
+Se utiliz\'o un l\'aser con una longitud de onda $\lambda= 670 nm$ (color rojo). Para que el haz del l\'aser impactara justo en la rendija se utiliz\'o un arreglo de espejos. De esta manera, se tom\'o registro en un papel de los patrones de difracci\'on generados a una distancia $D = 155,1 \pm 0,1 cm$ de la rendija; en la Figura \ref{fig:difrac} se puede ver un ejemplo de uno de los patrones de difracci\'on observados. Posteriormente, se midi\'o con una regla las distancias entre los m\'aximos registrados en el papel, se realizaron ocho mediciones con distintos pesos.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{difrac.jpg}
+\caption{Ejemplo del fen\'omeno de difracci\'on observado en el experimento.}
+\label{fig:difrac}
+\end{figure}
+
 \subsection{M\'etodo din\'amico}
 
 Para este m\'etodo se utiliz\'o pr\'acticamente el mismo dispositivo experimental que en el est\'atico, con la excepci\'on de que se quitaron los pesos y se utilizaron dos barras de lat\'on (diferenciandose entre s\'i por su di\'ametro, longitud y peso) y otra de hierro. En la siguiente tabla se detallan los valores tomados para cada barra:\newline
@@ -230,7 +246,22 @@ Por \'ultimo, para la barra de lat\'on fino se analiz\'o como varia la frecuenci
 %------------------------------------------------
 \section{Resultados y an\'alisis}
 
-METODO ESTATICO
+\subsection{M\'etodo est\'atico}
+
+Para conocer la deformaci\'on de la varilla de lat\'on mediante el fen\'omeno de difracci\'on se utiliz\'o la ecuaci\'on \ref{eq:minimos} que sale de las ecuaciones que describen los m\'inimos de la  difracci\'on de  Fraunhofer, donde $\lambda$  es la longitud de onda, $D$ es la distancia de la rendija a la pantalla, $n$ es el n\'umero de m\'inimo ($n = 1, 2, 3...$), $d_{n}$ es la distancia a la cual se encuentra dicho m\'inimo, y la variable $y$ representa la apertura de la rendija, o en otros t\'erminos, representa la deformaci\'on de la varilla.
+
+\begin{equation}
+\label{eq:minimos}
+y= \lambda D \frac{n}{d_{n}}
+\end{equation}
+
+Considerando que en la toma de datos los m\'aximos de intensidad son mucho m\'as definidos que los m\'inimos, se midieron las posiciones de los m\'aximos. Sin embargo en la ecuaci\'on \ref{eq:minimos} se precisan las posiciones de los puntos donde la intensidad es m\'inima. Para obtener estos m\'inimos se calcularon los puntos medios entre dos m\'aximos. Entonces, mediante la ecuaci\'on \ref{eq:minimos} se obtuvo una lista, por cada patr\'on de difracci\'on, que conten\'ia varios valores de $y$ (el ancho de la rejilla). Se promediaron dichos valores y considerando que cada promedio correspond\'ia a un peso distinto se realiz\'o una regresi\'on lineal entre los valores de masa-deformaci\'on, en la cual se obtuvo una pendiente de $-0,00285 \pm 0,00014 $ y una abscisa de $0,147 \pm 0,006$ (Figura \ref{fig:regrlin}). Comparando este resultado con nuestro modelo te\'orico expresado en la ecuaci\'on \ref{eq:vigafeynman} , se obtuvo un m\'odulo de Young de $E = (16,28 \pm 3,87) * 10^{10} Pa$.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{regrlin.png}
+\caption{Regresi\'on lineal entre la masa y la deformaci\'on en el m\'etodo est\'atico .}
+\label{fig:regrlin}
+\end{figure}
 
 
 \subsection{M\'etodo din\'amico}
@@ -285,14 +316,14 @@ Adem\'as, se calcul\'o la densidad lineal de cada barra a partir de su peso y lo
 
 \begin{table}[H]
 \centering
-\caption{Valores de longitud $L$, densidad lineal $\rho_{l}$ y momento de inercia $I$ para cada barra.}
+\caption{Valores de longitud $L$, densidad lineal $\rho_{l}$ y momento de inercia $I$ para las barras de lat\'on, hierro y lat\'on fino (de arriba hacia abajo, en ese \'orden).}
 \label{tab:params_barras}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-Material & $L$ (cm) & $\rho_{l}$ (g/cm) & $I$ $(cm^{4})$\\ \hline
-Lat\'on & 31,2 $\pm$ 0,1 & 1,64 $\pm$ 0,01 & 0,0024 $\pm$ 0,0001\\ \hline
-Hierro & 36,1 $\pm$ 0,1 & 1,01 $\pm$ 0,01 & 0,0009 $\pm$ 0,0001\\ \hline
-Lat\'on fino & 40,3 $\pm$ 0,1 & 0,55 $\pm$ 0,01 & 0,0002 $\pm$ 0,0001\\ \hline
+$L$ (cm) & $\rho_{l}$ (g/cm) & $I$ $(cm^{4})$\\ \hline
+31,2 $\pm$ 0,1 & 1,64 $\pm$ 0,01 & 0,0024 $\pm$ 0,0001\\ \hline
+36,1 $\pm$ 0,1 & 1,01 $\pm$ 0,01 & 0,0009 $\pm$ 0,0001\\ \hline
+40,3 $\pm$ 0,1 & 0,55 $\pm$ 0,01 & 0,0002 $\pm$ 0,0001\\ \hline
 \end{tabular}
 \end{table}
 
@@ -307,9 +338,9 @@ Luego, mediante la ecuaci\'on (\ref{eq:omegas}) y los datos de las Tablas \ref{t
 \begin{tabular}{|c|c|}
 \hline
 Material & $E$ (Pa)\\ \hline
-Lat\'on & $8,44 * 10^{10}$ $\pm$ 0,1\\ \hline
-Hierro & $2,89 * 10^{11}$ $\pm$ 0,1\\ \hline
-Lat\'on fino & $1,58 * 10^{11}$ $\pm$ 0,1\\ \hline
+Lat\'on & $(8,44 \pm 1,1) * 10^{10}$\\ \hline
+Hierro & $(2,89 \pm 0,8) * 10^{11}$\\ \hline
+Lat\'on fino & $(1,58 \pm 0,2) * 10^{11}$\\ \hline
 \end{tabular}
 \end{table}
 
@@ -338,10 +369,11 @@ Cabe aclarar que, para esta parte de la experiencia, se intent\'o tomar longitud
 
 \section{Conclusiones}
 
-En en el presente trabajo se calcul\'o el m\'odulo de elasticidad de Young de diferentes materiales mediante de la flexi\'on de una barra de lat\'on en voladizo. Para eso, se utilizaron dos m\'etodos: uno est\'atico y otro din\'amico. En el m\'etodo est\'atico se analizaron patrones de difracci\'on obtenidos por la luz de un laser a traves de una rendija en un extremo de una barra
+En en el presente trabajo se calcul\'o el m\'odulo de elasticidad de Young de diferentes materiales mediante de la flexi\'on de una barra de lat\'on en voladizo. Para eso, se utilizaron dos m\'etodos: uno est\'atico y otro din\'amico. \newline
 
+En el m\'etodo est\'atico se analizaron patrones de difracci\'on obtenidos por la luz de un laser a traves de una rendija en un extremo de una barra. Se obtuvo un valor del m\'odulo de Young que es aproximadamente el doble de los valores tabulados en la literatura y de los que obtuvimos mediante el m\'etodo din\'amico, sin embargo son del mismo orden de magnitud. \newline
 
-
+Se considera que al ser un m\'todo indirecto, pasando tanto por un m\'etodo \'optico como por varias mediciones directas, los errores tienden a propagarse. Por otro lado, tambi\'en concluimos que esta diferencia entre el valor obtenido y el tabulado puede ser producido por un mal ajuste del tornillo sujetador de la varilla, pues este sujetador consist\'ia en dos tornillos en diferentes posiciones de los cuales uno no ajustaba completamente. \newline
 
 
 En el m\'etodo din\'amico, se obtuvieron las frecuencias de oscilaci\'on y la constante de amortiguamiento de tres barras: dos de lat\'on (diferenciandose en su diametro y longitud) y otra de hierro. 
@@ -350,7 +382,7 @@ Con los datos obtenidos, se realizo un ajuste para poder obtener el factor de am
 
 Luego, se obtuvieron las frecuencias de resonancia realizando una transformada de Fourier a la se\~nal original. Pudimos ver a frecuencia fundamental y los primeros arm\'onicos, no obstante entre estos exist\'ian frecuencias que no correspond\'ian a modos de resonancia de la barra si no a diversos factores como un efecto rebote introducido por el movimiento oscilante de la misma registrado por el fotodiodo. \newline
 
-En la pr\'actica, para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del modo fundamental; como se menciono en el p\'arrafo anterior, logramos obtener las frecuencias del primer y segundo arm\'onico, las cuales resultaron dif\'iciles de visualizar dado que los picos correspondientes a estas frecuencias eran muy peque\~nos con respecto al del fundamental. \newline
+En la pr\'actica, para calcular el m\'odulo de Young solo se utiliz\'o la frecuencia del modo fundamental; como se menciono en el p\'arrafo anterior, logramos obtener las frecuencias del primer y segundo arm\'onico, las cuales resultaron dif\'iciles de visualizar dado que los picos correspondientes a estas frecuencias eran muy peque\~nos con respecto al del fundamental. Cabe destacar que, con este m\'etodo se logro una medici\'on mucho m\'as precisa que con el m\'etodo est\'atico; si bien ambas mediciones dan en el orden de $10^{10}$, el valor de $E$ calculado es muy similar a los encontrados en la bibliograf\'ia para el material considerado.\newline
 
 Por \'ultimo, se estudi\'o la variaci\'on de la frecuencia fundamental y el factor de amortiguamiento en funci\'on de la longitud para la barra de lat\'on fino, con lo cual concluimos que
 la frecuencia fundamental aumenta al disminuir la longitud de manera exponencial; esto puede deberse a que, a menor longitud, el material adquiere m\'as r\'igidez, por lo tanto oscila a frecuencias m\'as altas, destacando a la fundamental sobre sus arm\'onicos, siendo \'estos \'ultimos muy dif\'iciles de ver en los espectros. \newline
@@ -360,7 +392,7 @@ Por otro lado, al observar el factor de amortiguamiento $\alpha$ en funci\'on de
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-
+\newpage
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
 
