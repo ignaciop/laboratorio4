@@ -2,7 +2,7 @@ inst1 = visa('ni','GPIB0::9::INSTR');
 fopen(inst1);
 %%
 ScanInterval = 5;% ? Delay (in secs) between scans.... entre cada tanda aguanto 5 segundos
-numberScans = 900;% ? mido T en cada termocupla x veces 
+numberScans = 1000;% ? mido T en cada termocupla x veces 
 channelDelay = 0.2;% ? Delay (in secs) between relay closure and measurement... 
 %los contactores del multiflexor tardan un poco en cerrarse.. casi 0.2 segundos.. 
 %defino esto para que no halla error
@@ -56,18 +56,18 @@ pause(2); %pausa entre cada escaneo
 
 %%
 
-strNdata=query(inst1,'DATA:POINTS?'); %cuantos puntos vas a escanear?
-Ndata=str2double(strNdata);
-%Ndata=ncanales*numberScans;%data TOTAL
-%query the values of all the scanned channels
+%strNdata=query(inst1,'DATA:POINTS?'); %cuantos puntos tenes en memoria?
+%Ndata=str2double(strNdata);
+
+% hago un array vacio para todos los datos que planeo medir
+Ndata=ncanales*numberScans;%data TOTAL
 DATA=nan(Ndata,1);
 TIME=nan(Ndata,1);
 CHAN=nan(Ndata,1);
 
-indata=1;
+indata=0;
 
-
-while(indata<=Ndata) %indata es la dara hasta ahora.. Tenes data?
+while(indata<Ndata) %indata es la dara hasta ahora.. Tenes data?
     strNdata=query(inst1,'DATA:POINTS?');%SI!.. le pido los datapoints
     dataAvailable=str2double(strNdata); %me dan los datapoints
     if(dataAvailable>0)
@@ -76,11 +76,11 @@ while(indata<=Ndata) %indata es la dara hasta ahora.. Tenes data?
         %data(1) contains the measurement 
         %data(2) contains the time from the scan start
         %data(3) contains the number of channel
-        DATA(indata)=data(1)        
-        TIME(indata)=data(2);        
-        CHAN(indata)=data(3);             
+        DATA(indata+1)=data(1);        
+        TIME(indata+1)=data(2);        
+        CHAN(indata+1)=data(3);             
         indata=indata+1;
-        pause(0.5); % por si las moscas
+        pause(0.05); % por si las moscas
     end
 
  
@@ -102,7 +102,7 @@ while(indata<=Ndata) %indata es la dara hasta ahora.. Tenes data?
     plot(posiciones,datainfo,'rs')
     xlabel('posiciones')
     ylabel('temperatura(ºC)')
-    save('recoleccion.txt','datainfo','timeinfo','-ascii')
+    save('recoleccionEstacionario_bis.txt','datainfo','timeinfo','-ascii')
 
 end
 
