@@ -1,0 +1,14 @@
+T = load('recoleccionEstacionario.txt');
+T1 = T(1,:);
+
+realposic=[4.1  13.5 17.5 22 29 37]/100;%en metros
+posiciones = nan(length(T),length(realposic)); %matriz de nans de las posiciones de las termocuplas
+    for j = 1:length(T)
+        posiciones(j,:)=[realposic];%creo la matriz de posiciones 
+        %ft(j)=fit(posiciones(j,:)',T(j,:)','exp1');
+        %plot(ft(j),posiciones(j,:)',T(j,:)')
+        plot(posiciones(j,:),T(j,:),'.')
+        xlabel('Posición(m)')
+        ylabel('Temperatura(ºC)')
+        hold on
+    end

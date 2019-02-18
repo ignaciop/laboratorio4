@@ -8,6 +8,10 @@
 
 \usepackage{mhchem}
 
+\usepackage{gensymb}
+
+\usepackage[super]{natbib}
+
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 
 \usepackage{lmodern}
@@ -80,7 +84,7 @@
 \date{Grupo 3 - Laboratorio 4, C\'atedra Schmiegelow - Departamento de F\'isica, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires \newline \\ \today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent En este trabajo se estudi\'o la  difusi\'on  del  calor utilizando una barra de cobre sometida a una fuente peri\'odica, modulada por una onda cuadrada en uno de sus extremos. Se calcul\'o la velocidad y el coeficiente de decaimiento de la onda de calor en el estado estacionario, para poder obtener la constante de difusividad t\'ermica del \ce{_{29}Cu}, $\kappa = ALGO$.
+\noindent En este trabajo se estudi\'o la  difusi\'on  del  calor utilizando una barra de cobre sometida a una fuente peri\'odica, modulada por una onda cuadrada en uno de sus extremos. Se calcul\'o la velocidad y el coeficiente de decaimiento de la onda de calor en el estado estacionario, obteniendo experimentalmente la constante de difusividad t\'ermica del \ce{_{29}Cu}, $\kappa = (2,46 \pm 0,70)*10^{-4} \frac{m^{2}}{seg}$.
 
 \end{abstract}
 }
@@ -98,7 +102,7 @@
 
 \section{Introducci\'on}
 
-En un s\'olido is\'otropo y homog\'eneo, cuya difusividad t\'ermica $\kappa$ es independiente de la temperatura, la ecuaci\'on que determina el comportamiento t\'ermico es: \cite{eq:calor}:
+En un s\'olido is\'otropo y homog\'eneo, cuya difusividad t\'ermica $\kappa$ es independiente de la temperatura, la ecuaci\'on que determina el comportamiento t\'ermico es\cite{eq:calor}:
 
 \begin{equation}
 \label{eq:calor}
@@ -167,7 +171,7 @@ Finalmente, combinando las ecuaciones (\ref{eq:ke}) y (\ref{eq:kv}), se obtiene 
 \kappa = \frac{v}{2\epsilon}
 \end{equation}
 
-la cual permite comparar el valor de $\kappa$ experimental con el teorico de $\kappa = 1,02*10^{-4}$ $\frac{m^{2}}{seg}$
+la cual permite comparar el valor de $\kappa$ experimental con el te\'orico \cite{teo:kappa} de $\kappa = 1,12*10^{-4}$ $\frac{m^{2}}{seg}$
 
 %------------------------------------------------
 
@@ -179,21 +183,21 @@ Los instrumentos de laboratorio utilizados fueron:
 \label{Laser} PC con software MATLAB para la adquisici\'on y an\'alisis de los datos.
 \item Mult\'imetro Agilent 34970A.
 \item Multiplexor de 8 canales.
-\item Barra de cobre de 1.5 $\pm$ 0.1 cm de di\'ametro y 50 $\pm$ 0.1 cm de largo.
+\item Barra de cobre de 1,5 $\pm$ 0,1 cm de di\'ametro y 50,0 $\pm$ 0,1 cm de largo.
 \item Siete termocuplas (2 de tipo K y 5 de tipo J).
 \item Soldador.
 \item Contactor.
 \item Generador de funciones Tektronix AFG3021B.
 \end{itemize}
 
-Se dispuso un soldador conectado a un contactor controlado por un generador de ondas, el cual se configur\'O para emitir una onda cuadrada de per\'iodo $\tau$ = 200 seg. durante el r\'egimen transitorio; y de $\tau$ = 170 seg. para el estacionario. Luego, la punta del soldador fue insertada en uno de los extremos de la barra aislada, y a los 10 minutos se comenz\'o a medir el r\'egimen transitorio. \newline
+Se dispuso un soldador conectado a un contactor controlado por un generador de ondas, el cual se configur\'o para emitir una onda cuadrada de per\'iodo $\tau$ = 170 seg. durante los r\'egimenes transitorio y estacionario. Luego, la punta del soldador fue insertada en uno de los extremos de la barra aislada, y a los 10 minutos se comenz\'o a medir el r\'egimen transitorio. \newline
 
 \par
 Las medidas de la temperatura se obtuvieron mediante 7 termocuplas de tipo K y J, insertadas a lo largo de la barra en diferentes posiciones como muestra la siguiente tabla (todos los valores tomando como posici\'on 0 al extremo fijado al soldador):
 
 \begin{table}[H]
 \centering
-\caption{Posici\'on de cada termocupla en la barra con respecto al extremo en contacto con el soldador (posici\'On 0).}
+\caption{Posici\'on de cada termocupla en la barra con respecto al extremo en contacto con el soldador (posici\'on 0).}
 \label{tab:posiciones}
 \begin{tabular}{|c|c|}
 \hline
@@ -201,10 +205,10 @@ Termocupla & Posici\'on ( $\pm 0,1 cm$) \\ \hline
 1 K & 4,1\\ \hline
 2 K & 8,6\\ \hline
 3 J & 13,4\\ \hline
-1 J & 17,1\\ \hline
-1 J & 22,0\\ \hline
-1 J & 29,2\\ \hline
-1 J & 36,4\\ \hline
+4 J & 17,1\\ \hline
+5 J & 22,0\\ \hline
+6 J & 29,2\\ \hline
+7 J & 36,4\\ \hline
 \end{tabular}
 \end{table}
 
@@ -225,7 +229,7 @@ Luego, se obtuvieron todos los datos guardados en el mult\'imetro con el mismo p
 %------------------------------------------------
 \section{Resultados y an\'alisis}
 
-Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionario, se aliment\'o al soldador con una onda cuadrada de per\'iodo $\tau$ = 200 seg y amplitud de 6,432 Vpp. durante la primera medici\'on realizada en un tiempo de 1:30 hs.; observando que la misma aumenta de manera uniforme durante \'este r\'egimen hasta oscilar alrededor de un valor fijo en cada termocupla; por ejemplo, en las termocuplas 1 y 4, $T_{Ch. 1}$ = 89.5 C y $T_{Ch. 4}$ = 79.2 C respectivamente ; manteni\'endose en este rango lo que resta de tiempo en esta primer medici\'on, como puede verse en la siguiente figura.
+Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionario, se aliment\'o al soldador con una onda cuadrada de per\'iodo $\tau$ = 170 seg. y amplitud de 6,432 Vpp. durante la primera medici\'on realizada en un tiempo de 1:30 hs.; observando que la misma aumenta de manera uniforme durante \'este r\'egimen hasta oscilar alrededor de un valor fijo en cada termocupla para los \'ultimos valores de tiempo en esta medici\'on ($t \approx$ 4800 a 5000 seg.), teniendo en cuenta el error de precisi\'on de las mismas ($\pm$ 1,5 \degree C). Por ejemplo, en las termocuplas 1 y 4, $T_{Ch 1}$ = 89,5 \degree C y $T_{Ch 4}$ = 79,2 \degree C respectivamente, como puede verse en la siguiente figura.
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{Tvst_transitorio.jpg}
@@ -234,11 +238,24 @@ Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionar
 \end{figure}
 
 
-Luego, se deja evolucionar al sistema durante 3 horas m\'as, para poder alcanzar el r\'egimen estacionario, y se realiza la segunda medici\'on, \'esta vez con una onda cuadrada de per\'iodo $\tau$ = 170 seg. y misma amplitud que antes.
+Luego, se deja evolucionar al sistema durante 3 horas m\'as, para poder alcanzar el r\'egimen estacionario, y se realiza la segunda medici\'on, con los mismos par\'ametros de per\'iodo y amplitud que para el transitorio.
 
 FIGURA DEL ESTACIONARIO ACA?????
 
-Podemos notar que la temperatura inicial de la termocupla 1 es de 89 grados, coincidiendo con la ultima medicion de temperatura (a t = 5000 seg) para el regimen transitorio; lo cual nos indica que el tiempo de 3 horas utilizado para llegar al regimen estacionario una vez comenzado el experimento fue correcto.
+Podemos notar que la temperatura inicial de la termocupla 1 es de 91.5 \degree C, muy cercano al valor de la \'ultima medici\'on de temperatura (a $t$ = 5000 seg) para el r\'egimen transitorio. Teniendo en cuenta esto, m\'as el rango de precisi\'on mencionado en cada termocupla; nos indica que el tiempo de 3 horas utilizado para alcanzar el r\'egimen estacionario una vez comenzado el experimento fue el correcto.
+
+\subsection{C\'alculo de la velocidad $v$ y la constante de decaimiento $\epsilon$ de la onda t\'ermica}
+
+
+$\kappa_{\epsilon} = (4,97 \pm 0,8) * 10^{-4} \frac{m^{2}}{seg}$ 
+
+$\kappa_{v} = (1,24 \pm 0,8) * 10^{-4} \frac{m^{2}}{seg}$
+
+Aunque el valor estimado de $\kappa$ puede ser calculado mediante el promedio de $\kappa_{\epsilon}$ y $\kappa_{v}$; en nuestro caso ....; existe una pequena diferencia de 0.7 con el obtenido mediante la ecuacion v/2e = TANTO.
+
+Lo ideal seria que estos dos valores den muy proximos entre si, para minimizar el error en el calculo. En nuestro caso, al calcular las temperaturas medias, se indujo un error bla bla bla.
+
+Se obtuvo una diferencia del 45 por ciento en el calculo de k con respecto al valor tabulado de k = 1,12.
 
 
 
@@ -254,7 +271,9 @@ Podemos notar que la temperatura inicial de la termocupla 1 es de 89 grados, coi
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
 
-\bibitem{eq:calor} A. Bodas, V. G\'andia and E. L\'opez-Baeza, \textit{An undergraduate experiment on the propagation of thermal waves}, American Journal of Physics, \textbf{66}, 528 (1998). 
+\bibitem{eq:calor} A. Bodas, V. G\'andia and E. L\'opez-Baeza, \textit{An undergraduate experiment on the propagation of thermal waves}, American Journal of Physics, \textbf{66}, 528 (1998).
+
+\bibitem{teo:kappa} W. Czarnetzki, M. Wandelt, and W. Roetzel, \textit{Thermal wave analysis for measurements of thermal diffusivity, Proceedings of the Joint Conference 1996: IEEE Instrumentation and Measurement Technology Conference and IMEKO Technical Committee 7}, Brussels, Belgium, 4-6 June 1996 (IEEE, New York, 1996), p\'ag. 1195.
  
 \end{thebibliography}
 
