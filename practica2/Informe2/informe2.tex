@@ -229,7 +229,7 @@ Luego, se obtuvieron todos los datos guardados en el mult\'imetro con el mismo p
 %------------------------------------------------
 \section{Resultados y an\'alisis}
 
-Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionario, se aliment\'o al soldador con una onda cuadrada de per\'iodo $\tau$ = 170 seg. y amplitud de 6,432 Vpp. durante la primera medici\'on realizada en un tiempo de 1:30 hs.; observando que la misma aumenta de manera uniforme durante \'este r\'egimen hasta oscilar alrededor de un valor fijo en cada termocupla para los \'ultimos valores de tiempo en esta medici\'on ($t \approx$ 4800 a 5000 seg.), teniendo en cuenta el error de precisi\'on de las mismas ($\pm$ 1,5 \degree C). Por ejemplo, en las termocuplas 1 y 4, $T_{Ch 1}$ = 89,5 \degree C y $T_{Ch 4}$ = 79,2 \degree C respectivamente, como puede verse en la siguiente figura.
+Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionario, se aliment\'o al soldador con una onda cuadrada de per\'iodo $\tau$ = 170 seg. y amplitud de 6,432 Vpp. durante la primera medici\'on realizada en un tiempo de 1:30 hs.; observando que la misma aumenta de manera uniforme durante \'este r\'egimen hasta oscilar alrededor de un valor fijo en cada termocupla para los \'ultimos valores de tiempo en esta medici\'on ($t \approx$ 4800 a 5000 seg.), teniendo en cuenta el error de precisi\'on de las mismas ($\pm$ 1,5 \degree C). Por ejemplo, en las termocuplas 1 y 4, $T_{Ch 1} \approx$  90 \degree C y $T_{Ch 4} \approx$ 79,2 \degree C respectivamente, como puede verse en la siguiente figura.
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{Tvst_transitorio.jpg}
@@ -240,28 +240,59 @@ Para estimar la temperatura a la cual el sistema alcanza el r\'egimen estacionar
 
 Luego, se deja evolucionar al sistema durante 3 horas m\'as, para poder alcanzar el r\'egimen estacionario, y se realiza la segunda medici\'on, con los mismos par\'ametros de per\'iodo y amplitud que para el transitorio.
 
-FIGURA DEL ESTACIONARIO ACA?????
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Tvst.jpg}
+\caption{Valores de temperatura en funcion del tiempo para cada termocupla durante el regimen estacionario}
+\label{fig:Tvst_estacionario}
+\end{figure}
 
-Podemos notar que la temperatura inicial de la termocupla 1 es de 91.5 \degree C, muy cercano al valor de la \'ultima medici\'on de temperatura (a $t$ = 5000 seg) para el r\'egimen transitorio. Teniendo en cuenta esto, m\'as el rango de precisi\'on mencionado en cada termocupla; nos indica que el tiempo de 3 horas utilizado para alcanzar el r\'egimen estacionario una vez comenzado el experimento fue el correcto.
+
+Podemos notar que la temperatura inicial de la termocupla 1 es de aproximadamente 91,5 \degree C, muy cercano al valor de la \'ultima medici\'on de temperatura (a $t$ = 5000 seg) para el r\'egimen transitorio. Teniendo en cuenta esto, m\'as el rango de precisi\'on mencionado en cada termocupla; nos indica que el tiempo de 3 horas utilizado para alcanzar el r\'egimen estacionario una vez comenzado el experimento fue el correcto.
 
 \subsection{C\'alculo de la velocidad $v$ y la constante de decaimiento $\epsilon$ de la onda t\'ermica}
 
 
-$\kappa_{\epsilon} = (4,97 \pm 0,8) * 10^{-4} \frac{m^{2}}{seg}$ 
+La velocidad de propagaci\'on de la onda de calor est\'a dada por:
 
-$\kappa_{v} = (1,24 \pm 0,8) * 10^{-4} \frac{m^{2}}{seg}$
+\begin{equation}
+\label{eq:velocidad}
+v = \frac{\Delta x}{\Delta t}
+\end{equation}
 
-Aunque el valor estimado de $\kappa$ puede ser calculado mediante el promedio de $\kappa_{\epsilon}$ y $\kappa_{v}$; en nuestro caso ....; existe una pequena diferencia de 0.7 con el obtenido mediante la ecuacion v/2e = TANTO.
+donde $\Delta x$ es la distancia dada por la diferencia en las posiciones de las termocuplas que figuran en la Tabla \ref{tab:posiciones}. $\Delta t$ es el tiempo que la onda de temperatura tarda en llegar de una termocupla a otra. Se trabaj\'o con los valores obtenidos con los canales 1 y 2, sin tomar en cuenta los otros canales debido a que al calcular los m\'aximos de temperatura, el algoritmo de detecci\'on de picos fallaba, mientras que la se\~nal de los canales 1 y 2 fue lo suficientemente limpia para que detecte bien los m\'aximos. A\'un as\'i, se utilizaron algunos algoritmos de optimizaci\'on, como por ejemplo, se limpi\'o el ruido de la se\~nal y cuando el programa detectaba dos m\'aximos en un lugar donde s\'olo deb\'ia haber uno, fueron promediados. \newline
 
-Lo ideal seria que estos dos valores den muy proximos entre si, para minimizar el error en el calculo. En nuestro caso, al calcular las temperaturas medias, se indujo un error bla bla bla.
+\par
+En la Figura \ref{fig:deltat} se puede ver un acercamiento a la diferencia temporal que hay entre el primer m\'aximo de temperatura de los canales 1 y 2. Se realiz\'o este procedimiento para todos los m\'aximos y se obtuvo una lista de diferencias temporales, la cual se promedi\'o, obteniendo: $\Delta t = $. La diferencia entre la posici\'on de las termocuplas 1 y 2 es: $\Delta x = $, pudiendo obtener un valor para la velocidad de la onda de: $v = $.
 
-Se obtuvo una diferencia del 45 por ciento en el calculo de k con respecto al valor tabulado de k = 1,12.
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{deltat.jpg}
+\caption{Detalle de la diferencia de fases entre los valores m\'aximos de la temperatura en los canales 1 y 2.}
+\label{fig:deltat}
+\end{figure}
 
 
+Para obtener el valor del coeficiente de decaimiento $\epsilon$ se calcul\'o el valor medio de la temperatura de cada termocupla, y se realizo un ajuste exponencial de la variaci\'on de temperatura en funci\'on de la posici\'on de cada una de ellas, donde se encontro que $\epsilon = $ (Figura \ref{fig:decaimiento}).
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{decaimiento.jpg}
+\caption{Ajuste por una curva exponencial de la temperatura media en funcion de la posici\'on de cada termocupla.}
+\label{fig:decaimiento}
+\end{figure}
+
+Por ultimo, mediante las ecuaciones (\ref{eq:ke}) y (\ref{eq:kv}) se encontr\'o que $\kappa_{\epsilon} = (4,97 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$ y $\kappa_{v} = (1,24 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$, lo que permite realizar un promedio entre ambos valores y obtener un valor aproximado de la constante de difusividad t\'ermica de $\bar{\kappa} = (3,11 \pm 0,7) * 10^{-4}  \frac{m^{2}}{seg}$.
+
+Al utilizar la ecuaci\'on (\ref{eq:kappa}), con los datos obtenidos para la velocidad $v$ y la constante de decaimiento $\epsilon$, se obtuvo que $\kappa = (2,46 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$. Se puede ver que existe una leve diferencia de $0.7\frac{m^{2}}{seg}$ entre el valor obtenido con $\bar{\kappa}$ con respecto al calculado mediante la ecuaci\'on (\ref{eq:kappa}).
 
 %------------------------------------------------
 
 \section{Conclusiones}
+
+
+
+
+\par
+Con los resultados obtenidos experimentalmente para $\kappa$, se obtuvo una diferencia del 45 \% con respecto al valor te\'orico tabulado para el Cobre, $\kappa = 1,12 * 10^{-4} \frac{m^{2}}{seg}$., que si bien se encuentra dentro del orden de magnitud propuesto por la bibliograf\'ia, creemos que se produjeron errores debido a la baja sensibilidad de las termocuplas, produciendo que la detecci\'on de m\'aximos de intensidad no sean tan exactos, afectando el c\'alculo final.
+
 
 
 %----------------------------------------------------------------------------------------
