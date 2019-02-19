@@ -262,7 +262,7 @@ v = \frac{\Delta x}{\Delta t}
 donde $\Delta x$ es la distancia dada por la diferencia en las posiciones de las termocuplas que figuran en la Tabla \ref{tab:posiciones}. $\Delta t$ es el tiempo que la onda de temperatura tarda en llegar de una termocupla a otra. Se trabaj\'o con los valores obtenidos con los canales 1 y 2, sin tomar en cuenta los otros canales debido a que al calcular los m\'aximos de temperatura, el algoritmo de detecci\'on de picos fallaba, mientras que la se\~nal de los canales 1 y 2 fue lo suficientemente limpia para que detecte bien los m\'aximos. A\'un as\'i, se utilizaron algunos algoritmos de optimizaci\'on, como por ejemplo, se limpi\'o el ruido de la se\~nal y cuando el programa detectaba dos m\'aximos en un lugar donde s\'olo deb\'ia haber uno, fueron promediados. \newline
 
 \par
-En la Figura \ref{fig:deltat} se puede ver un acercamiento a la diferencia temporal que hay entre el primer m\'aximo de temperatura de los canales 1 y 2. Se realiz\'o este procedimiento para todos los m\'aximos y se obtuvo una lista de diferencias temporales, la cual se promedi\'o, obteniendo: $\Delta t = 16.6 \pm 3.8 s$, para el error de este valor se considero la desviaci\'on est\'andar de la de la curva gaussiana centrada en el valor medio pues los errores m\'as notables se producieron en el an\'alisis de datos. La diferencia entre la posici\'on de las termocuplas 1 y 2 es: $\Delta x = 0.045  \pm 0.002m$, pudiendo obtener un valor para la velocidad de la onda de: $v =0.0027 \pm 0.0007 \frac{m}{s} $, el error de este valor se obtuvo a partir de la propagaci\'on de errores.
+En la Figura \ref{fig:deltat} se puede ver un acercamiento a la diferencia temporal que hay entre el primer m\'aximo de temperatura de los canales 1 y 2. Se realiz\'o este procedimiento para todos los m\'aximos y se obtuvo una lista de diferencias temporales, la cual se promedi\'o, obteniendo: $\Delta t = (16,6 \pm 3,8)$ seg., para el error de este valor se considero la desviaci\'on est\'andar de la de la curva gaussiana centrada en el valor medio pues los errores m\'as notables se producieron en el an\'alisis de datos. La diferencia entre la posici\'on de las termocuplas 1 y 2 es: $\Delta x = (0,045 \pm 0,002)$ m., pudiendo obtener un valor para la velocidad de la onda de $v = (0,0027 \pm 0,0007) \frac{m}{seg}$, el error de este valor se obtuvo a partir de la propagaci\'on de errores.
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{deltat.jpg}
@@ -271,7 +271,7 @@ En la Figura \ref{fig:deltat} se puede ver un acercamiento a la diferencia tempo
 \end{figure}
 
 
-Para obtener el valor del coeficiente de decaimiento $\epsilon$ se calcul\'o el valor medio de la temperatura de cada termocupla, y se realizo un ajuste exponencial de la variaci\'on de temperatura en funci\'on de la posici\'on de cada una de ellas, donde se encontro que $\epsilon =6.1 \pm 0.3 \frac{1}{m} $ (Figura \ref{fig:decaimiento}).
+Para obtener el valor del coeficiente de decaimiento $\epsilon$ se calcul\'o el valor medio de la temperatura de cada termocupla, y se realizo un ajuste exponencial de la variaci\'on de temperatura en funci\'on de la posici\'on de cada una de ellas, donde se encontro que $\epsilon = (6,1 \pm 0,3) \frac{1}{m} $ (Figura \ref{fig:decaimiento}).
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{decaimiento.jpg}
@@ -281,18 +281,30 @@ Para obtener el valor del coeficiente de decaimiento $\epsilon$ se calcul\'o el 
 
 Por ultimo, mediante las ecuaciones (\ref{eq:ke}) y (\ref{eq:kv}) se encontr\'o que $\kappa_{\epsilon} = (4,9 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$ y $\kappa_{v} = (1,2 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$, lo que permite realizar un promedio entre ambos valores y obtener un valor aproximado de la constante de difusividad t\'ermica de $\bar{\kappa} = (3,11 \pm 0,7) * 10^{-4}  \frac{m^{2}}{seg}$.
 
-Al utilizar la ecuaci\'on (\ref{eq:kappa}), con los datos obtenidos para la velocidad $v$ y la constante de decaimiento $\epsilon$, se obtuvo que $\kappa = (2,4 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$. Se puede ver que existe una leve diferencia de $0.7\frac{m^{2}}{seg}$ entre el valor obtenido con $\bar{\kappa}$ con respecto al calculado mediante la ecuaci\'on (\ref{eq:kappa}).
+Al utilizar la ecuaci\'on (\ref{eq:kappa}), con los datos obtenidos para la velocidad $v$ y la constante de decaimiento $\epsilon$, se obtuvo que $\kappa = (2,4 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$, notando que existe una leve diferencia de $0.7\frac{m^{2}}{seg}$, entre el valor obtenido con $\bar{\kappa}$ con respecto al calculado mediante la ecuaci\'on mencionada.
 
 %------------------------------------------------
 
 \section{Conclusiones}
 
-
-
+Para poder obtener las constantes de difusividad t\'ermica y de decaimiento de una barra de Cobre se estudi\'o la conducci\'on de calor en la misma, calentando un soldador fijado a un extremo de la misma mediante un contactor controlado por un generador de ondas emitiendo una onda cuadrada de per\'iodo $\tau$ = 170 seg. durante los r\'egimenes transitorio y estacionario. \newline
 
 \par
-Con los resultados obtenidos experimentalmente para $\kappa$, se obtuvo una diferencia del 45 \% con respecto al valor te\'orico tabulado para el Cobre, $\kappa = 1,12 * 10^{-4} \frac{m^{2}}{seg}$., que si bien se encuentra dentro del orden de magnitud propuesto por la bibliograf\'ia, creemos que se produjeron errores debido a la baja sensibilidad de las termocuplas, produciendo que la detecci\'on de m\'aximos de intensidad no sean tan exactos, afectando el c\'alculo final.
+Las medidas de temperatura se obtuvieron mediante termocuplas insertadas a lo largo de la barra en diferentes posiciones, con respecto a una posici\'on 0, que se eligi\'o en el extremo donde se coloc\'o el soldador. Los datos recolectados mediante el mult\'imetro conectado a dichas termocuplas permitieron calcular la velocidad $v$ de propagaci\'on de la onda y su constante de decaimiento $\epsilon$. \newline
 
+\par
+La velocidad de propagaci\'on de la onda de calor se calculo mediante la distancia $\Delta x$ entre termocuplas y $\Delta t$ es el tiempo que la onda de temperatura tarda en llegar de una termocupla a otra; obteniendo un valor de $v = (0,0027 \pm 0,0007) \frac{m}{seg}$. \newline
+
+\par
+Para la obtenci\'on del valor del coeficiente de decaimiento $\epsilon$ se calcul\'o el valor medio de la temperatura de cada termocupla, y se realizo un ajuste exponencial de la variaci\'on de temperatura en funci\'on de la posici\'on de cada una de ellas, dando $\epsilon = (6,1 \pm 0,3) \frac{1}{m}$. \newline
+
+\par
+A partir de lo mencionado en los dos p\'arrafos anteriores, fue posible determinar los factores $\kappa_{\epsilon} = (4,9 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$ y $\kappa_{v} = (1,2 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$, lo que permiti\'o realizar un promedio entre ambos para obtener un valor aproximado de la constante de difusividad t\'ermica de $\bar{\kappa} = (3,11 \pm 0,7) * 10^{-4}  \frac{m^{2}}{seg}$.
+
+Podemos comparar este valor de $\bar{\kappa}$ con el calculado mediante la ecuaci\'on (\ref{eq:kappa}), siempre utilizando los datos recolectados para $v$ y $\epsilon$, con los cuales se obtuvo que $\kappa = (2,4 \pm 0,7) * 10^{-4} \frac{m^{2}}{seg}$. Se puede ver que existe una diferencia de $0.7\frac{m^{2}}{seg}$ entre el valor calculado con $\bar{\kappa}$ y $\kappa$, lo que permite que en ciertas condiciones puedan considerarse iguales. \newline
+
+\par
+Con los resultados obtenidos experimentalmente para $\kappa$, se obtuvo una diferencia del 45 \% con respecto al valor te\'orico tabulado para el Cobre, $\kappa = 1,12 * 10^{-4} \frac{m^{2}}{seg}$., que si bien se encuentra dentro del orden de magnitud propuesto por la bibliograf\'ia, creemos que se produjeron errores debido a la baja sensibilidad de las termocuplas y al c\'alculo del $\Delta t$, produciendo que la detecci\'on de m\'aximos de intensidad no sean tan exactos, afectando el c\'alculo final de los coeficientes, sobre todo de $\kappa_{\epsilon}$.
 
 
 %----------------------------------------------------------------------------------------
