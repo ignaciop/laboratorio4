@@ -55,7 +55,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Laboratorio 4 $\bullet$ Informe 2 $\bullet$ Grupo 3: Poggi, R\'ios Ch\'avez} % Custom header text
+\fancyhead[C]{Laboratorio 4 $\bullet$ Informe 3 $\bullet$ Grupo 3: Poggi, R\'ios Ch\'avez} % Custom header text
 \fancyfoot[C]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -70,7 +70,7 @@
 
 \pretitle{\begin{center}\LARGE\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Difusividad t\'ermica} % Article title
+\title{Piezoel\'ectrico} % Article title
 \author{%
 \textsc{Ignacio Poggi} \\[1ex] % Your name
 \normalsize \href{mailto:ignaciop.3@gmail.com}{ignaciop.3@gmail.com} % Your email address
@@ -84,8 +84,7 @@
 \date{Grupo 3 - Laboratorio 4, C\'atedra Schmiegelow - Departamento de F\'isica, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires \newline \\ \today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent En este trabajo se estudi\'o la  difusi\'on  del  calor utilizando una barra de cobre sometida a una fuente peri\'odica, modulada por una onda cuadrada en uno de sus extremos. Se calcul\'o la velocidad y el coeficiente de decaimiento de la onda de calor en el estado estacionario, obteniendo experimentalmente la constante de difusividad t\'ermica del \ce{_{29}Cu}, $\kappa = (2,4 \pm 0,7)*10^{-4} \frac{m^{2}}{seg}$.
-
+\noindent En este trabajo se estudi\'o el comportamiento de un material piezoel\'ectrico de cuarzo sometido a una se\~nal el\'ectrica. Mediante el modelado de este material por un circuito RLC y el an\'alisis de los datos recolectados, se obtuvieron las frecuencias de resonancia $\omega_{r} = ALGO$; antirresonancia $\omega_{a} = ALGO2$ y el factor de m\'erito $Q = ALGO3$ del circuito equivalente.
 \end{abstract}
 }
 
@@ -102,76 +101,76 @@
 
 \section{Introducci\'on}
 
-En un s\'olido is\'otropo y homog\'eneo, cuya difusividad t\'ermica $\kappa$ es independiente de la temperatura, la ecuaci\'on que determina el comportamiento t\'ermico es\cite{eq:calor}:
 
-\begin{equation}
-\label{eq:calor}
-\frac{\partial^2 \theta (x,t)}{\partial x^{2}} = \frac{1}{\kappa} \frac{\partial \theta (x,t)}{\partial t}
-\end{equation}
 
-siendo $\theta(x,t)$ la temperatura en la posici\'on $x$ a tiempo $t$. A la ecuaci\'on (\ref{eq:calor}) se la conoce como la ecuaci\'on de Fourier unidimensional. Para determinar las condiciones de contorno que corresponden a nuestro experimento, se dispuso en el origen de la barra una fuente de calor peri\'odica, lo que permite expresar $\theta(x,t)$ en este extremo de la siguiente manera:
-
-\begin{equation}
-\label{eq:theta0}
-\theta(0,t) = \sum_{n = 1, 3, 5, ...}^{\infty} \frac{4\theta_{0}}{n\pi} sen(\frac{2n\pi t}{\tau})
-\end{equation}
-
-Adem\'as, como la barra se supone semi-infinita, la condici\'on en el otro extremo ser\'a $\theta(\infty,t) = 0$; es decir, se considera que la temperatura al final de la barra decae completamente. \newline
+El efecto piezoel\'ectrico describe la capacidad de dichos materiales minerales, como el cuarzo, de producir una carga el\'ectrica en respuesta a un esfuerzo mec\'anico aplicado; o de manera inversa, deformarse al estar expuestos a un campo el\'ectrico. \newline
 
 \par
-Siendo que nos interesa la distribuci\'on de temperatura en el r\'egimen estacionario, se propone la siguiente serie de Fourier como soluci\'on a la ecuaci\'on (\ref{eq:calor}):
+Como consecuencia de este comportamiento, los s\'olidos piezoel\'ectricos pueden resonar a ciertas frecuencias que dependen de la naturaleza del mismo y de su forma geom\'etrica. Hay ciertas frecuencias para las cuales la transferencia de energ\'ia electromec\'anica es m\'axima (resonancia), y otras para las cuales \'esta es m\'inima (antirresonancia). En este sentido, el cristal piezoel\'ectrico se comporta de manera an\'aloga a un circuito RLC en serie, para el cual su din\'amica se describe mediante la sigiente ecuaci\'on diferencial:
 
 \begin{equation}
-\label{eq:solgeneral}
-\theta(x,t) = \sum_{n = 1}^{\infty} A_{n}(x) sen(\omega_{n}t - k_{n}x)
+\label{eq:oderlc}
+L\frac{d^{2}i}{dt^{2}} + R\frac{di}{dt} + \frac{1}{C}i = \frac{dV}{dt}
 \end{equation}
 
-donde $A_{n}$, $\omega_{n}$ y $k_{n}$ son la amplitud, frecuencia y el n\'umero de onda del $n$-\'esimo arm\'onico. Reemplazando la ecuaci\'on (\ref{eq:solgeneral}) en (\ref{eq:calor}), junto a las condiciones de contorno mencionadas en (\ref{eq:theta0}) y $\theta(\infty,t) = 0$, se obtiene la soluci\'on para el sistema estudiado:
+donde $R$, $L$, $C$ y $V$ son la resistencia, inductancia, capacitancia y voltaje del circuito, respectivamente. \newline
 
-\begin{equation}
-\label{eq:solbarra}
-\theta(x,t) = \sum_{n = 1, 3, 5, ...}^{\infty} \theta_{n}e^{\epsilon_{n}x} sen(\omega_{n}t - \epsilon_{n}x)
-\end{equation}
-
-donde
-
-\begin{equation}
-\label{eq:conds}
-\theta_{n} = \frac{4\theta_{0}}{n\pi}, \omega_{n} = \frac{2n\pi t}{\tau}, \epsilon_{n} = \sqrt{\frac{\omega_{n}}{2\kappa}}
-\end{equation}
-
-
-Se puede ver que, a medida que aumenta $n$, los arm\'onicos se desvanecen r\'apidamente dado que $\epsilon_{n}$ aumenta con la frecuencia. Debido a esto, es posible aproximar a la distribuci\'on de temperatura en puntos lo suficientemente alejados del origen de la barra, utilizando solamente el primer arm\'onico:
-
-\begin{equation}
-\label{eq:firstharmonic}
-\theta(x,t) \approx A_{0}e^{\epsilon x} cos(\omega(t - \frac{x}{v}))
-\end{equation}
-
-escogiendo el origen de tiempo tal que $\theta$ es m\'aximo en $ x = 0$. Considerando la ecuaci\'on (\ref{eq:firstharmonic}) y el primer arm\'onico de la soluci\'on completa (\ref{eq:solbarra}), se pueden obtener las expresiones:
-
-\begin{equation}
-\label{eq:ke}
-\kappa_{\epsilon} = \frac{\pi}{\tau \epsilon^{2}}
-\end{equation}
-
-\begin{equation}
-\label{eq:kv}
-\kappa_{v} = \frac{v^{2} \tau}{4\pi}
-\end{equation}
-
-
-que relacionan las propiedades t\'ermicas del material, en este caso la difusividad t\'ermica $\kappa$, con dos propiedades de la onda: la velocidad $v$ y el coeficiente de decaimiento $\epsilon$. \newline
 
 \par
-Finalmente, combinando las ecuaciones (\ref{eq:ke}) y (\ref{eq:kv}), se obtiene una expresi\'on para el coeficiente de difusividad t\'ermica del cobre en funci\'on de los par\'ametros $v$ y $\epsilon$, determinados experimentalmente:
+Dado que en el piezoel\'ectrico estudiado hay dos placas de metal adosadas a dos de sus lados, que funcionan como una capacidad adicional junto con el cristal; hay que tener en cuenta en el circuito el\'ectrico equivalente una capacidad $C_{2}$ en paralelo con el piezoel\'ectrico, como muestra la Figura \ref{fig:esquemapzt}.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{esquemapzt.jpg}
+\caption{Diagrama del circuito RLC equivalente para el piezoel\'ectrico de cuarzo. Se muestra la capacidad adicional $C_{2}$ introducida por las placas de metal agregadas al cristal; $R_{1}$ y $R_{2}$ resistencias arbitrarias y los voltajes de entrada y salida $V_{1}$ y $V_{2}$, respectivamente.}
+\label{fig:esquemapzt}
+\end{figure}
+
+Gracias al modelado del material de cuarzo como un circuito RLC, podemos calcular algunas de sus propiedades para poder caracterizarlo, siendo de nuestro inter\'es los par\'ametros $R$, $L$, $C$ y $C_{2}$ del mismo. Para eso, veamos algunas propiedades de los circuitos mencionados, por ejemplo su admitancia, dada por la siguiente ecuaci\'on:
 
 \begin{equation}
-\label{eq:kappa}
-\kappa = \frac{v}{2\epsilon}
+\label{eq:admitancia}
+Y = \frac{1}{Z} = \frac{R}{R^{2} + \Omega^{2}} + j(\omega C_{2} - \frac{\Omega}{R^{2} + \Omega^{2}})
 \end{equation}
 
-la cual permite comparar el valor de $\kappa$ experimental con el te\'orico \cite{teo:kappa} de $\kappa = 1,12*10^{-4}$ $\frac{m^{2}}{seg}$
+siendo $Z$ la impedancia y $\Omega = \omega L - \frac{1}{\omega C}$.
+
+La transferencia de energ\'ia del circuito est\'a dada por: 
+
+\begin{equation}
+\label{eq:transferencia}
+T = \frac{|V_{2}|}{|V_{1}|} = \frac{R_{2}}{R_{2} + Z}
+\end{equation}
+
+donde $R_{2}$ es una resistencia arbitraria en el circuito, $V_{1}$ y $V_{2}$ los voltajes de entrada y salida respectivamente.
+Evaluando la transferencia en la frecuencia de resonancia $\omega_{r}$ del sistema se obtiene la siguiente ecuaci\'on, la cual nos permitir\'a calcular la resistencia $R$:
+
+\begin{equation}
+\label{eq:transferenciar}
+T(\omega_{r}) = \frac{R_{2}}{R_{2} + R}
+\end{equation}
+
+\par
+El par\'ametro $L$ se define a partir del c\'alculo del factor de calidad  $Q$ del cristal. Este factor est\'a dado por la ecuaci\'on:
+
+\begin{equation}
+\label{eq:merito}
+Q = \frac{\omega_{r}}{\Delta \omega} = \frac{\omega_{r}L}{R_{2} + R}
+\end{equation}
+
+donde $\Delta \omega$ es el ancho de la campana de resonancia. \newline
+
+\par
+Por \'ultimo, se pueden obtener los valores para la frecuencia de resonancia $\omega_{r}$ y antirresonancia $\omega_{a}$ experimentalmente mediante las siguientes ecuaciones, teniendo en cuenta que $C_{2}$ es muy peque\~no comparado con $C$:
+
+\begin{equation}
+\label{eq:wr}
+\omega_{r} = \frac{1}{\sqrt{LC}}
+\end{equation}
+
+\begin{equation}
+\label{eq:wa}
+\omega_{a} = \sqrt{\frac{1}{L}(\frac{1}{C} + \frac{1}{C_{2}})}
+\end{equation}
 
 %------------------------------------------------
 
@@ -181,13 +180,11 @@ Los instrumentos de laboratorio utilizados fueron:
 \begin{itemize}
 \item 
 \label{Laser} PC con software MATLAB para la adquisici\'on y an\'alisis de los datos.
-\item Mult\'imetro Agilent 34970A.
-\item Multiplexor de 8 canales.
-\item Barra de cobre de 1,5 $\pm$ 0,1 cm de di\'ametro y 50,0 $\pm$ 0,1 cm de largo.
-\item Siete termocuplas (2 de tipo K y 5 de tipo J).
-\item Soldador.
-\item Contactor.
 \item Generador de funciones Tektronix AFG3021B.
+\item Osciloscopio Tektronix TDS1002B.
+\item Amplificador Lock-In Stanford Research Systems SR830DSP, con interfaz GPIB.
+\item Cables BNC.
+\item Cristal piezoel\'ectrico de cuarzo.
 \end{itemize}
 
 Se dispuso un soldador conectado a un contactor controlado por un generador de ondas, el cual se configur\'o para emitir una onda cuadrada de per\'iodo $\tau$ = 170 seg. durante los r\'egimenes transitorio y estacionario. Luego, la punta del soldador fue insertada en uno de los extremos de la barra aislada, y a los 10 minutos se comenz\'o a medir el r\'egimen transitorio. \newline
