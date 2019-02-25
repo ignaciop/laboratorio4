@@ -187,10 +187,21 @@ Los instrumentos de laboratorio utilizados fueron:
 \item Cristal piezoel\'ectrico de cuarzo.
 \end{itemize}
 
-Se dispuso un soldador conectado a un contactor controlado por un generador de ondas, el cual se configur\'o para emitir una onda cuadrada de per\'iodo $\tau$ = 170 seg. durante los r\'egimenes transitorio y estacionario. Luego, la punta del soldador fue insertada en uno de los extremos de la barra aislada, y a los 10 minutos se comenz\'o a medir el r\'egimen transitorio. \newline
 
-\par
-Las medidas de la temperatura se obtuvieron mediante 7 termocuplas de tipo K y J, insertadas a lo largo de la barra en diferentes posiciones como muestra la siguiente tabla (todos los valores tomando como posici\'on 0 al extremo fijado al soldador):
+En esta experiencia, se trabajo con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{dispexp.jpg}
+\caption{Esquema del dispositivo experimental utilizado. En primera instancia, en lugar del amplificador se dispuso un osciloscopio.}
+\label{fig:dispexp}
+\end{figure}
+
+En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una senal de referencia requerida por el amplificador lock-in, se conecto una de las salidas del generador de funciones con la entrada de referencia del amplificador.
+
+
+Finalmente, se conectaron el osciloscopio (mediante cable USB) y el amplificador (mediante interfaz GPIB) a una PC con software MATLAB,    con el cual se ejecut\'o un script para poder recolectar y analizar los datos enviados por los equipos mencionados.
+
+
 
 \begin{table}[H]
 \centering
@@ -208,20 +219,6 @@ Termocupla & Posici\'on ( $\pm 0,1 cm$) \\ \hline
 7 J & 36,4\\ \hline
 \end{tabular}
 \end{table}
-
-
-Estas termocuplas se conectaron a un multiplexor, el cual fue conectado a un mult\'imetro de 8 canales, con el que se realiz\'o la adquisici\'on de los datos utilizando 7 de ellos. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
-
-\begin{figure}[H]
-\includegraphics[width=\linewidth]{dispexp.jpg}
-\caption{Dispositivo experimental. Cabe destacar que la barra de cobre se encuentra aislada con una capa interna de espuma aislante y una externa de PVC.}
-\label{fig:disenoestatico}
-\end{figure}
-
-Mediante un programa realizado en MATLAB; el cual se utilizo para configurar al mult\'imetro v\'ia interfaz GPIB, se tomaron 1000 mediciones secuenciales en las termocuplas cada 5 segundos, es decir; se obtuvieron 7 valores de temperatura (una por cada termocupla) cada 5 segundos; esto equivale a una medici\'on. Este paso se repiti\'o durante un tiempo total de 5000 segundos (aproximadamente 1:30 hs.), primero para el r\'egimen transitorio y luego para el estacionario; dejando pasar para este \'ultimo 3 horas desde el comienzo de la medici\'on del transitorio. \newline
-
-\par
-Luego, se obtuvieron todos los datos guardados en el mult\'imetro con el mismo programa en MATLAB, para su posterior an\'alisis.
 
 %------------------------------------------------
 \section{Resultados y an\'alisis}
