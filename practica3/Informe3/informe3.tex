@@ -106,7 +106,7 @@
 El efecto piezoel\'ectrico describe la capacidad de dichos materiales minerales, como el cuarzo, de producir una carga el\'ectrica en respuesta a un esfuerzo mec\'anico aplicado; o de manera inversa, deformarse al estar expuestos a un campo el\'ectrico. \newline
 
 \par
-Como consecuencia de este comportamiento, los s\'olidos piezoel\'ectricos pueden resonar a ciertas frecuencias que dependen de la naturaleza del mismo y de su forma geom\'etrica. Hay ciertas frecuencias para las cuales la transferencia de energ\'ia electromec\'anica es m\'axima (resonancia), y otras para las cuales \'esta es m\'inima (antirresonancia). En este sentido, el cristal piezoel\'ectrico se comporta de manera an\'aloga a un circuito RLC en serie, para el cual su din\'amica se describe mediante la sigiente ecuaci\'on diferencial \cite{eq:oderlc}:
+Como consecuencia de este comportamiento, los s\'olidos piezoel\'ectricos pueden resonar a ciertas frecuencias que dependen de la naturaleza del mismo y de su forma geom\'etrica. Hay ciertas frecuencias para las cuales la transferencia de energ\'ia electromec\'anica es m\'axima (resonancia), y otras para las cuales \'esta es m\'inima (antirresonancia). En este sentido, el cristal piezoel\'ectrico se comporta de manera an\'aloga a un circuito RLC en serie, para el cual su din\'amica se describe mediante la siguiente ecuaci\'on diferencial \cite{eq:oderlc}:
 
 \begin{equation}
 \label{eq:oderlc}
@@ -160,7 +160,7 @@ Q = \frac{\omega_{r}}{\Delta \omega} = \frac{\omega_{r}L}{R_{2} + R}
 donde $\Delta \omega$ es el ancho de la campana de resonancia. \newline
 
 \par
-Por \'ultimo, se pueden obtener los valores para la frecuencia de resonancia $\omega_{r}$ y antirresonancia $\omega_{a}$ experimentalmente mediante las siguientes ecuaciones, teniendo en cuenta que $C_{2}$ es muy peque\~no comparado con $C$:
+Por \'ultimo, se pueden obtener los valores para la frecuencia de resonancia $\omega_{r}$ y antirresonancia $\omega_{a}$ experimentalmente mediante las siguientes ecuaciones, teniendo en cuenta que $C$ es muy peque\~no comparado con $C_{2}$:
 
 \begin{equation}
 \label{eq:wr}
@@ -188,7 +188,7 @@ Los instrumentos de laboratorio utilizados fueron:
 \end{itemize}
 
 
-En esta experiencia, se trabajo con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
+En esta experiencia, se trabaj\'o con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{dispexp.jpg}
@@ -196,7 +196,7 @@ En esta experiencia, se trabajo con un cristal piezoel\'ectrico de base cuadrada
 \label{fig:dispexp}
 \end{figure}
 
-En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una senal de referencia requerida por el amplificador lock-in, se conecto una de las salidas del generador de funciones con la entrada de referencia del amplificador.
+En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una se\~nal de referencia requerida por el amplificador lock-in, se conecto una de las salidas del generador de funciones con la entrada de referencia del amplificador.
 
 
 Finalmente, se conectaron el osciloscopio (mediante cable USB) y el amplificador (mediante interfaz GPIB) a una PC con software MATLAB,    con el cual se ejecut\'o un script para poder recolectar y analizar los datos enviados por los equipos mencionados.
@@ -208,7 +208,7 @@ Para poder estimar la frecuencia de resonancia del cristal de cuarzo, en primer 
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{detallecampanaOSC.png}
-\caption{Campana de resonancia obtenida mediante un barrido de frecuencias manual.}
+\caption{Campana de resonancia obtenida mediante un barrido de frecuencias manual con el osciloscopio.}
 \label{fig:detallecampanaOSC}
 \end{figure}
 
@@ -219,7 +219,7 @@ Adem\'as, se intent\'o calcular la frecuencia de antirresonancia utilizando este
 
 
 \par
-Posteriormente se analizaron los datos obtenidos por el amplificador lock-in. Se realizaron varios barridos de frecuencia con distintos niveles de resoluci\'on en la variaci\'on de la frecuencia, procurando que el barrido sea fino en los rangos que m\'as nos interesaron, es decir cerca a la resonancia y la antirresonancia, previamente estimadas. Se trabaj\'o con todas las mediciones en una sola base de datos y para determinar la frecuencia de resonancia se utilizaron tres m\'etodos, el primero consisti\'o en ajustar la curva de voltaje a una curva lorentziana, ajuste del cual se obtuv\'o que $\omega_{r}$ = (50097,85 $\pm$ 0,01) Hz (la bondad del ajuste fue $R^{2}$ = 0,992), como muestra la Figura \ref{fig:ajuste}:
+Posteriormente se analizaron los datos obtenidos por el amplificador lock-in. Se realizaron varios barridos de frecuencia con distintos niveles de resoluci\'on en la variaci\'on de la frecuencia, procurando que el barrido sea fino en los rangos que m\'as nos interesaron, es decir cerca a la resonancia y la antirresonancia, previamente estimadas. Se trabaj\'o con todas las mediciones en una sola base de datos y para determinar la frecuencia de resonancia se utilizaron tres m\'etodos, el primero consisti\'o en ajustar la curva de voltaje a una curva lorentziana, ajuste del cual se obtuvo que $\omega_{r}$ = (50097,85 $\pm$ 0,01) Hz (la bondad del ajuste fue $R^{2}$ = 0,992), como muestra la Figura \ref{fig:ajuste}:
 
 
 \begin{figure}[H]
