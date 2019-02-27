@@ -84,7 +84,7 @@
 \date{Grupo 3 - Laboratorio 4, C\'atedra Schmiegelow - Departamento de F\'isica, Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires \newline \\ \today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent En este trabajo se estudi\'o el comportamiento de un material piezoel\'ectrico de cuarzo sometido a una se\~nal el\'ectrica. Mediante el modelado de este material por un circuito RLC y el an\'alisis de los datos recolectados, se obtuvieron las frecuencias de resonancia $\omega_{r} = ALGO$; antirresonancia $\omega_{a} = ALGO2$ y el factor de m\'erito $Q = ALGO3$ del circuito equivalente.
+\noindent En este trabajo se estudi\'o el comportamiento de un material piezoel\'ectrico de cuarzo sometido a una se\~nal el\'ectrica. Mediante el modelado de este material por un circuito RLC y el an\'alisis de los datos recolectados utilizando varios m\'etodos, se obtuvieron las frecuencias de resonancia y antirresonancia, el factor de m\'erito $Q$ y los par\'ametros $R$, $L$ y $C$ del circuito equivalente.
 \end{abstract}
 }
 
@@ -106,7 +106,7 @@
 El efecto piezoel\'ectrico describe la capacidad de dichos materiales minerales, como el cuarzo, de producir una carga el\'ectrica en respuesta a un esfuerzo mec\'anico aplicado; o de manera inversa, deformarse al estar expuestos a un campo el\'ectrico. \newline
 
 \par
-Como consecuencia de este comportamiento, los s\'olidos piezoel\'ectricos pueden resonar a ciertas frecuencias que dependen de la naturaleza del mismo y de su forma geom\'etrica. Hay ciertas frecuencias para las cuales la transferencia de energ\'ia electromec\'anica es m\'axima (resonancia), y otras para las cuales \'esta es m\'inima (antirresonancia). En este sentido, el cristal piezoel\'ectrico se comporta de manera an\'aloga a un circuito RLC en serie, para el cual su din\'amica se describe mediante la sigiente ecuaci\'on diferencial \cite{eq:oderlc}:
+Como consecuencia de este comportamiento, los s\'olidos piezoel\'ectricos pueden resonar a ciertas frecuencias que dependen de la naturaleza del mismo y de su forma geom\'etrica. Hay ciertas frecuencias para las cuales la transferencia de energ\'ia electromec\'anica es m\'axima (resonancia), y otras para las cuales \'esta es m\'inima (antirresonancia). En este sentido, el cristal piezoel\'ectrico se comporta de manera an\'aloga a un circuito RLC en serie, para el cual su din\'amica se describe mediante la siguiente ecuaci\'on diferencial \cite{eq:oderlc}:
 
 \begin{equation}
 \label{eq:oderlc}
@@ -160,7 +160,7 @@ Q = \frac{\omega_{r}}{\Delta \omega} = \frac{\omega_{r}L}{R_{2} + R}
 donde $\Delta \omega$ es el ancho de la campana de resonancia. \newline
 
 \par
-Por \'ultimo, se pueden obtener los valores para la frecuencia de resonancia $\omega_{r}$ y antirresonancia $\omega_{a}$ experimentalmente mediante las siguientes ecuaciones, teniendo en cuenta que $C_{2}$ es muy peque\~no comparado con $C$:
+Por \'ultimo, se pueden obtener los valores para la frecuencia de resonancia $\omega_{r}$ y antirresonancia $\omega_{a}$ experimentalmente mediante las siguientes ecuaciones, teniendo en cuenta que $C$ es muy peque\~no comparado con $C_{2}$:
 
 \begin{equation}
 \label{eq:wr}
@@ -188,7 +188,7 @@ Los instrumentos de laboratorio utilizados fueron:
 \end{itemize}
 
 
-En esta experiencia, se trabajo con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
+En esta experiencia, se trabaj\'o con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{dispexp.jpg}
@@ -196,29 +196,10 @@ En esta experiencia, se trabajo con un cristal piezoel\'ectrico de base cuadrada
 \label{fig:dispexp}
 \end{figure}
 
-En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una senal de referencia requerida por el amplificador lock-in, se conecto una de las salidas del generador de funciones con la entrada de referencia del amplificador.
+En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una se\~nal de referencia requerida por el amplificador lock-in, se conect\'o una de las salidas del generador de funciones con la entrada de referencia del amplificador.
 
 
 Finalmente, se conectaron el osciloscopio (mediante cable USB) y el amplificador (mediante interfaz GPIB) a una PC con software MATLAB,    con el cual se ejecut\'o un script para poder recolectar y analizar los datos enviados por los equipos mencionados.
-
-
-
-\begin{table}[H]
-\centering
-\caption{Posici\'on de cada termocupla en la barra con respecto al extremo en contacto con el soldador (posici\'on 0).}
-\label{tab:posiciones}
-\begin{tabular}{|c|c|}
-\hline
-Termocupla & Posici\'on ( $\pm 0,1 cm$) \\ \hline
-1 K & 4,1\\ \hline
-2 K & 8,6\\ \hline
-3 J & 13,4\\ \hline
-4 J & 17,1\\ \hline
-5 J & 22,0\\ \hline
-6 J & 29,2\\ \hline
-7 J & 36,4\\ \hline
-\end{tabular}
-\end{table}
 
 %------------------------------------------------
 \section{Resultados y an\'alisis}
@@ -227,19 +208,18 @@ Para poder estimar la frecuencia de resonancia del cristal de cuarzo, en primer 
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{detallecampanaOSC.png}
-\caption{Campana de resonancia obtenida mediante un barrido de frecuencias manual.}
+\caption{Campana de resonancia obtenida mediante un barrido de frecuencias manual con el osciloscopio.}
 \label{fig:detallecampanaOSC}
 \end{figure}
 
-Luego, se pudo calcular la frecuencia de resonancia y el ancho de la campana, dando como resultado $\omega_{r}$ = (50,108 $\pm$ 0,011) kHz y $\Delta \omega$ = (6,15 $\pm$ 0,10) Hz respectivamente. Con estos datos, se obtuvo el factor de m\'erito del circuito, $Q = 8147$. \newline
+Luego, se pudo calcular la frecuencia de resonancia y el ancho de la campana, dando como resultado $\omega_{r}$ = (50108 $\pm$ 7) Hz y $\Delta \omega$ = (6,15 $\pm$ 0,10) Hz respectivamente. Con estos datos, se obtuvo el factor de m\'erito del circuito, $Q$ = 8147 $\pm$ 70. \newline
 
 \par
-Adem\'as, se intent\'o calcular la frecuencia de antirresonancia utilizando este m\'etodo; pero al aumentar la escala en el gr\'afico anterior en la zona correspondiente a dicha frecuencia (50,025 kHz $< \omega_{a} <$ 50,03 kHz), notamos que por la baja resoluci\'on del osciloscopio no se pudo obtener un valor confiable para $\omega_{a}$.
+Adem\'as, se intent\'o calcular la frecuencia de antirresonancia utilizando este m\'etodo; pero al aumentar la escala en el gr\'afico anterior en la zona correspondiente a dicha frecuencia (50,025 kHz $< \omega_{a} <$ 50,03 kHz), notamos que por la baja resoluci\'on del osciloscopio no se pudo obtener un valor confiable para $\omega_{a}$. \newline
 
 
-
-
-Posteriormente se analizaron los datos obtenidos por el lock-in. Se realizaron varios barridos de frecuencia con distintos niveles de resoluci\'on en la variaci\'on de la frecuencia, procurando que el barrido sea fino en los rangos que m\'as nos interesan, es decir cerca a la resonancia y la anti resonancia, previamente estimadas. Se trabaj\'o con todas las mediciones en una sola base de datos y para determinar la frecuencia de resonancia se utilizaron tres m\'etodos, el primero consisti\'o en ajustar la curva de voltaje a una curva lorenziana, ajuste del cual se obtuv\'o que $\omega_{r}=50097.85\pm0.01 Hz$, la bondad del ajuste fue $R-Square=0.992$, la figura \ref{fig:ajuste} muestra el ajuste.
+\par
+Posteriormente se analizaron los datos obtenidos por el amplificador lock-in. Se realizaron varios barridos de frecuencia con distintos niveles de resoluci\'on en la variaci\'on de la frecuencia, procurando que el barrido sea fino en los rangos que m\'as nos interesaron, es decir cerca a la resonancia y la antirresonancia, previamente estimadas. Se trabaj\'o con todas las mediciones en una sola base de datos y para determinar la frecuencia de resonancia se utilizaron tres m\'etodos, el primero consisti\'o en ajustar la curva de voltaje a una curva lorentziana, ajuste del cual se obtuvo que $\omega_{r}$ = (50097,85 $\pm$ 0,01) Hz (la bondad del ajuste fue $R^{2}$ = 0,992), como muestra la Figura \ref{fig:ajuste}:
 
 
 \begin{figure}[H]
@@ -249,57 +229,55 @@ Posteriormente se analizaron los datos obtenidos por el lock-in. Se realizaron v
 \end{figure}
 
 
-
-
-
-Los siguienes m\'etodos tambi\'en sirvieron para determinar la frecuencia de anti resonancia. El segundo m\'etodo consisti\'o en encontrar la frecuencia para la cual la transferencia de energ\'ia es m\'axima considerando que la transferencia es directamente proporcional al voltaje registrado,  figura \ref{fig:detalleRESamp}. Se obtuv\'o que $\omega_{r}=50097.9\pm0.3 Hz$ y en el caso de la anti resonancia se determin\'o la frecuencia en la cual la transferencia de energ\'ia es m\'inima, obteniendose que $\omega_{a}=50284.4\pm0.3$, figura \ref{fig:detalleANTamp}.
+El segundo m\'etodo consisti\'o en encontrar la frecuencia para la cual la transferencia de energ\'ia es m\'axima considerando que la transferencia es directamente proporcional al voltaje registrado,  Figura \ref{fig:detalleRESamp}. Se obtuvo que $\omega_{r}$ = (50097,9 $\pm$ 0,3) Hz y en el caso de la antirresonancia se determin\'o la frecuencia en la cual la transferencia de energ\'ia es m\'inima, obteni\'endose que $\omega_{a}$ = (50284,4 $\pm$ 0,3) Hz, Figura \ref{fig:detalleANTamp}.
 
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{frecVSampC-cam.jpg}
-\caption{Detalle de la campana de resonancia donde la linea punteada indica el voltaje m\'aximo y la linea horizontal indica los puntos para los cuales el voltaje m\'aximo se reduce a la mitad.}
+\caption{Detalle de la campana de resonancia, donde la l\'inea punteada indica el voltaje m\'aximo y la l\'inea horizontal indica los puntos para los cuales el voltaje m\'aximo se reduce a la mitad.}
 \label{fig:detalleRESamp}
 \end{figure}
 
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{minimo.jpg}
-\caption{Detalle del intervalo donde se produce la anti resonancia indicada por la linea punteada.}
+\caption{Detalle del intervalo donde se produce la antirresonancia indicada por la l\'inea punteada.}
 \label{fig:detalleANTamp}
 \end{figure}
 
-El \'ultimo m\'etodo que utilizamos consisti\'o en analizar la fase en funci\'on de la frecuencia, considerando que cuando la fase llega a cero de forma descendente corresponde a la fase en la frecuencia de resonancia y que cuando la fase pasa por cero de forma ascendente es que corresponde a la frecuencia de anti resonancia, con este m\'etodo se obtuvo que la frecuencia de resonancia es $\omega_{r}=50097.25\pm0.05Hz$ y que $\omega_{a}=50284.65 \pm 0.05 Hz$, en la figura \ref{fig:fase} se ve la curva completa mientras que en las figuras \ref{fig:bajada} y \ref{fig:subida} se ve en detalle los puntos donde la diferencia de fase pasa por cero. 
+El \'ultimo m\'etodo que utilizamos consisti\'o en analizar la fase en funci\'on de la frecuencia, considerando que cuando la fase llega a cero de forma descendente corresponde a la fase en la frecuencia de resonancia y que cuando la fase pasa por cero de forma ascendente es que corresponde a la frecuencia de antirresonancia. Se obtuvo que la frecuencia de resonancia es $\omega_{r}$ = (50097,25 $\pm$ 0,05) Hz y que $\omega_{a}$ = (50284,65 $\pm$ 0,05) Hz, en la Figura \ref{fig:fase} se ve la curva completa mientras que en las Figuras \ref{fig:bajada} y \ref{fig:subida} se ven en detalle los puntos donde la diferencia de fase pasa por cero. 
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{AMPvsFASE.jpg}
-\caption{Direfencia de fase entre la se\~nal de entrada al piezoel\'ectrico y la se\~nal de salida con respecto a la frecuencia}
+\caption{Diferencia de fase entre la se\~nal de entrada al piezoel\'ectrico y la se\~nal de salida con respecto a la frecuencia.}
 \label{fig:fase}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{bajada.jpg}
-\caption{Detalle de la diferencia de fase en el intervalo donde se produce la resonancia indicada por la linea punteada.}
+\caption{Detalle de la diferencia de fase en el intervalo donde se produce la resonancia indicada por la l\'inea punteada.}
 \label{fig:bajada}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{subida.jpg}
-\caption{Detalle de la diferencia de fase en el intervalo donde se produce la anti resonancia indicada por la linea punteada.}
+\caption{Detalle de la diferencia de fase en el intervalo donde se produce la antirresonancia indicada por la l\'inea punteada.}
 \label{fig:subida}
 \end{figure}
 
-Para obtener $\Delta \omega$ se calcularon las frecuencias para las cuales la amplitud m\'axima se habia reducido a la mitad, figura \ref{fig:detalleRESamp}, eso nos da una idea del ancho de la campana $\Delta \omega=5.90\pm0.01 Hz$ y si comparamos el valor de la frecuencia de resonancia con el ancho de la campana obtenemos el factor de merito el cual, cuanto m\'as grande es, nos indica que m\'as aguda es la campana y que por lo tanto el material es m\'as \'util como resonador pues resuena fuerte y solo en una frecuencia espec\'ifica, en este caso se encontr\'o que el factor de merito es $Q=8491\pm5$
+Para obtener $\Delta \omega$ se calcularon las frecuencias para las cuales la amplitud m\'axima se habia reducido a la mitad, figura \ref{fig:detalleRESamp}, eso nos di\'o una idea del ancho de la campana $\Delta \omega$ = (5,90 $\pm$ 0,01) Hz. Si comparamos el valor de la frecuencia de resonancia con el ancho de la campana obtenemos el factor de m\'erito, el cual cuanto m\'as grande es, nos indica que m\'as aguda es la campana y que por lo tanto el material es m\'as \'util como resonador en una frecuencia espec\'ifica; en este caso se encontr\'o que el factor de m\'erito es $Q$ = 8491 $\pm$ 5.
 
-Los par\'ametros del circuito que modela el comportamiento del piezoel\'ectrico fueron determinados mediante las ecuaciones \ref{eq:transferenciar}, \ref{eq:merito}, \ref{eq:wr} y \ref{eq:wa}, obteniendo se que la resistencia es $R=13.65\pm0.09 K\Omega$, la inductividad $L=3161 \pm 5 H$, la capacitancia es $C=0.126 \pm 0.004$ y que la capacitancia producida por la capa de oro que envuelve al piezo electrico es de $C_{2}=16.9\pm 0.5 pF$
+Los par\'ametros del circuito que modela el comportamiento del piezoel\'ectrico fueron determinados mediante las ecuaciones (\ref{eq:transferenciar}), (\ref{eq:merito}), (\ref{eq:wr}) y (\ref{eq:wa}), obteni\'endose que la resistencia es $R$ = (13,65 $\pm$ 0,09) K$\Omega$, la inductividad $L$ = (3161 $\pm$ 5) H, la capacitancia es $C$ = (0,126 $\pm$ 0,004) pF; y que la capacitancia producida por la capa de oro que envuelve al piezoel\'ectrico es de $C_{2}$ = (16,9 $\pm$ 0,5) pF.
+
 %------------------------------------------------
 
 \section{Conclusiones}
-Se puede observar que los distintos m\'etodos para determinar la frecuencia de resonancia var\'ian en d\'ecimas de hertz por lo cual consideramos que la experiencia tuvo bastante precisi\'on pues trabamos con frecuencias del orden de los kilohertz. \\
 
-Sobre la frecuencia de anti resonancia pudimos notar que es preciso un instrumento bastante sensible para poder determinarla pues el barrido que se realiz\'o con el osciloscopio registraba bastante ruido por lo que no se pudo trabajar con esos datos, mientras que con los datos obtenidos con el amplificador lock-in se pudo obtener un perfil de la curva de voltaje mucho m\'as limpio en comparaci\'on al del osciloscopio y m\'as aun tomando en cuenta el registro de la diferencia de fase que nos permiti\'o el amplificador lock-in. \\
+Se puede observar que los distintos m\'etodos para determinar la frecuencia de resonancia var\'ian en d\'ecimas de Hz, por lo cual consideramos que la experiencia tuvo bastante precisi\'on pues se trabaj\'o con frecuencias del \'orden de los kHz; incluso en un primer barrido manual con el osciloscopio. \\
 
-El factor de merito que obtuvimos nos indica que la campana es bastante aguda, es decir que el ancho de la campana es peque\~no en comparaci\'on a la altura. Por lo cual concluimos que la resonancia es una propiedad del piezoel\'ectrico. 
+Sobre la frecuencia de antirresonancia pudimos notar que es preciso un instrumento lo bastante sensible como para poder determinarla, pues el barrido que se realiz\'o con el osciloscopio registraba bastante ruido por lo que no se pudo trabajar con esos datos para determinar dicha frecuencia, mientras que con los datos obtenidos con el amplificador lock-in se pudo obtener un perfil de la curva de voltaje mucho m\'as limpio en comparaci\'on al del osciloscopio y m\'as aun tomando en cuenta el registro de la diferencia de fase que nos permiti\'o el amplificador. \\
 
+El alto factor de m\'erito que obtuvimos nos indica que la campana es bastante aguda, es decir que el ancho de la campana es peque\~no en comparaci\'on a la altura; por lo cual concluimos que el ancho de banda en el cual resuena material piezoel\'ectrico es m\'as estrecho, o visto de otra manera, posee una baja tasa de p\'erdida de energ\'ia en relaci\'on a la almacenada por el mismo.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
