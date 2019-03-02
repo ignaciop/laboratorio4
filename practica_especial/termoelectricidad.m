@@ -26,30 +26,26 @@ data = load('dataPeltier1.txt');
 temp1 = data(:,1);
 temp2 = data(:,2);
 volt = data(:,3);
+rate = 1000;
 
-
-tiempo=(0:(length(temp1)-1))*(1/s.Rate);
+tiempo=(0:(length(temp1)-1))*(1/rate);
 
 figure(1)
 ds1=smooth(temp1,300);
 ds2=smooth(temp2,300);
 plot(tiempo,ds1*100,tiempo,ds2*100 ,tiempo,(ds2-ds1)*100)
-%ylabel('Tiempo (seg)')
 xlabel('tiempo (s)')
 ylabel('Temp (C)')
 title('Temp 1y2')
+grid on
+l = legend('$T_{1}$', '$T_{2}$', '$\Delta T$');
+set(l, 'Location','best');
+set(l,'Interpreter','latex');
 
 
 figure(2)
-
 plot(tiempo,volt)
-%ylabel('Tiempo (seg)')
 xlabel('tiempo (s)')
 ylabel('Voltaje (v)')
 title('Voltaje')
-
-
-
-
-
-
+grid on
