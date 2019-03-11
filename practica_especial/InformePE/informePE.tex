@@ -221,7 +221,7 @@ Los instrumentos de laboratorio utilizados fueron:
 \item PC con software MATLAB para la adquisici\'on y an\'alisis de los datos.
 \item Placa de adquisici\'on de datos National Instruments NI-USB 6120.
 \item Celda Peltier Marlow Industries DT3-6.
-\item Dos sensores de temperatura LM35.
+\item Dos sensores de temperatura LM-35.
 \item Generador de corriente continua LG GP4303D.
 \item Unidad de medici\'on de corriente/voltaje Agilent B2901A.
 \item Cables Banana-Banana y Banana-Cocodrilo.
@@ -231,18 +231,22 @@ Los instrumentos de laboratorio utilizados fueron:
 
 
 
-En esta experiencia, se trabaj\'o con un cristal piezoel\'ectrico de base cuadrada, cortado a +5 \degree respecto de uno de sus ejes; contenido en una base cerrada de acr\'ilico. En dos de las caras del cristal, se encontraban dispuestos electrodos de metal, cada uno con un alambre soldado, cada uno de los cuales estaban en serie con una resistencia de 10 K$\Omega$. En la siguiente figura se puede ver un esquema del dispositivo utilizado:
+El armado experimental consisti\'o en una celda Peltier; en cada una de sus caras se ubicaron dos sensores de temperatura LM-35, los cuales estaban dentro de un hueco en dos cubos de aluminio que actuaban como disipador de calor. La celda fue alimentada con el generador de corriente/voltaje, el cual tambien permitio la obtencion del voltaje y corriente circulando por el circuito compuesto por la celda.
+
+A su vez, se tomaron las mediciones de los sensores LM-35 a traves de la placa de adquisici\'on de datos hacia una PC; lo que permitio\'odeterminar la temperatura de cada sensor. La relaci\'on entre voltaje de salida y temperatura medida en cada uno de ellos es de 10 mV/\degree C, su rango de medici\'on es de -55 \degree C (-550 mV) a 150 \degree C (1500 mV) y la precisi\'on a temperatura ambiente es de 0,5 \degree C. En la siguiente figura se muestra un esquema del dispositivo utilizado:
+
+
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Esquema del dispositivo experimental utilizado. .}
+\includegraphics[width=\linewidth]{dispexp.jpg}
+\caption{Esquema del dispositivo experimental utilizado. Se puede apreciar el esquema interno donde se encuentra ubicada la celda Peltier.}
 \label{fig:dispexp}
 \end{figure}
 
-En uno de los alambres mencionados, se utiliz\'o el generador de funciones para aplicar una se\~nal de entrada $V_{1}$ de amplitud 2 Vpp y frecuencia variable. Luego, sobre el otro alambre se registr\'o la se\~nal de salida $V_{2}$, en primera instancia con el osciloscopio y luego con el amplificador lock-in. Con \'este \'ultimo tambi\'en se obtuvo la diferencia de fase entre la se\~nal de entrada y la de salida. Cabe aclarar que, para poder establecer una se\~nal de referencia requerida por el amplificador lock-in, se conecto una de las salidas del generador de funciones con la entrada de referencia del amplificador.
+Los datos obtenidos en esta primera parte (voltaje, corriente y temperaturas) permitieron obtener el coeficiente de Seebeck $\alpha$, la resistencia $R$, el valor de corriente $I_{m\'ax}$ para el cual la celda llega al m\'aximo rendimiento, y la conductividad t\'ermica $K$.\newline
 
-
-Finalmente, se conectaron el osciloscopio (mediante cable USB) y el amplificador (mediante interfaz GPIB) a una PC con software MATLAB,    con el cual se ejecut\'o un script para poder recolectar y analizar los datos enviados por los equipos mencionados.
+\par
+Finalmente, para obtener la eficiencia y el rendimiento de la celda Peltier como maquina t\'ermica, calculando la potencia entregada a la misma y la absorbida por la cara fr\'ia. La primera se obtuvo como la corriente circulante por la tensi\'on entre las placas y para la segunda se coloc\'o una muestra de agua, midiendo el cambio de temperatura en el tiempo de la misma. 
 
 %------------------------------------------------
 \section{Resultados y an\'alisis}
