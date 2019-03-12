@@ -34,7 +34,7 @@ title('')
 %%
 deltat = (temp2-temp1)*100;
 figure(5)
-plot(deltat(2:7),volt(2:7),'.')
+plot(deltat(2:15),volt(2:15),'.')
 %Hacer ajuste en la zona que nos interesa para sacar el coef Seebeck??
 
 %%Maximo rango de operaciones para la celda usada: 85C
