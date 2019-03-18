@@ -106,17 +106,16 @@ Se denomina termoelectricidad a un conjunto de efectos o fen\'omenos f\'isicos q
 
 \subsection{Efecto Seebeck}
 
-Si se tiene un circuito formado por dos metales distintos, $A$ y $B$, con dos uniones a diferente temperatura, $T$ y $T + \Delta T$, se establece un flujo de corriente el\'ectrica debido a que los portadores de carga difunden en contra del gradiente de temperatura. Esto produce acumulaci\'on de carga en el extremo fr\'io y un vaciamiento del extremo caliente del termopar. Este desbalance de portadores genera un campo el\'ectrico, que a su vez origina una fuerza termoelectromotriz $\epsilon_{AB}$, que depende de los metales utilizados en la uni\'on y de la diferencia de temperatura entre las dos uniones.\newline
+Si se tiene un circuito formado por dos metales distintos, $A$ y $B$, con dos uniones a diferente temperatura, $T$ y $T + \Delta T$, se establece un flujo de corriente el\'ectrica debido a que los portadores de carga difunden en contra del gradiente de temperatura. Esto produce acumulaci\'on de carga en el extremo fr\'io y un vaciamiento del extremo caliente del termopar. Este desbalance de portadores genera un campo el\'ectrico, que a su vez origina una fuerza termoelectromotriz $\epsilon_{AB}$, que depende de los metales utilizados en la uni\'on y de la diferencia de temperatura entre las dos uniones.\\
 
-\par
-Se puede definir al coeficiente Seebeck $\alpha_{AB}$ como la relaci\'on entre $\epsilon_{AB}$ y $T$, de la siguiente manera:
+Se puede definir al coeficiente Seebeck $\alpha_{AB}$ como la relaci\'on entre $\epsilon_{AB}$ y $T$, de la siguiente manera [1]:
 
 \begin{equation}
 \label{eq:seebeck}
 \alpha_{AB} = \frac{d\epsilon_{AB}}{dT}
 \end{equation}
 
-La ecuaci\'on (\ref{eq:seebeck}) puede definirse macrosc\'opicamente como:
+La ecuaci\'on (\ref{eq:seebeck}) puede definirse en t\'erminos de la diferencia de potencial $\Delta V$ como:
 
 \begin{equation}
 \label{eq:seebeck2}
@@ -127,7 +126,7 @@ donde $\Delta V$ y $\Delta T$ son las diferencia de potencial neta  y temperatur
 
 \subsection{Efecto Peltier}
 
-Rec\'iprocamente al efecto Seebeck, al circular una corriente el\'ectrica $I$ por la uni\'on entre distintos materiales, se produce una transferencia de calor, como se esquematiza en la Figura \ref{fig:peltier}. La potencia calor\'ifica intercambiada en la uni\'on entre los puntos $A$ y $B$ es:
+Rec\'iprocamente al efecto Seebeck, al circular una corriente el\'ectrica $I$ por la uni\'on entre distintos materiales, se produce una transferencia de calor, como se esquematiza en la Figura \ref{fig:peltier}. La potencia calor\'ifica intercambiada en la uni\'on entre los puntos $A$ y $B$ es [2]:
 
 \begin{equation}
 \label{eq:peltier}
@@ -148,7 +147,7 @@ siendo $\pi_{AB}$ el coeficiente Peltier (calor intercambiado en la uni\'on por 
 Para una caracterizaci\'on completa de la celda, se deben tener en cuenta la difusi\'on de calor a trav\'es de la misma debido al gradiente de temperatura, y la disipaci\'on por efecto Joule.\newline
 
 \par
-La difusion de calor del lado mas caliente al fr\'io por unidad de tiempo para cada elemento esta dado por la ley de Fourier:
+La difusion de calor del lado mas caliente al fr\'io por unidad de tiempo para cada elemento esta dado por la ley de Fourier [3]:
 
 \begin{equation}
 \label{eq:calor}
@@ -158,7 +157,7 @@ La difusion de calor del lado mas caliente al fr\'io por unidad de tiempo para c
 donde $k$ es el coeficiente de conductividad t\'ermica de cada elemento por unidad de longitud, $A$ el \'area, $l$ la longitud de cada elemento y $\Delta T$ la diferencia de temperatura en los extremos (el signo negativo indica que el calor fluye en contra del gradiente de temperatura).\newline
 
 \par
-El efecto Joule est\'a representado por la transformaci\'on de trabajo el\'ectrico en calor, debido a la resistencia $R$ del circuito. La p\'erdida de energ\'ia asociada es:
+El efecto Joule est\'a representado por la transformaci\'on de trabajo el\'ectrico en calor, debido a la resistencia $R$ del circuito. La p\'erdida de energ\'ia asociada es [4]:
 
 \begin{equation}
 \label{eq:joule}
@@ -178,9 +177,9 @@ Una celda Peltier est\'a compuesta por un cierto n\'umero de termopares (pares d
 \label{fig:celda}
 \end{figure}
 
-Si ambas caras de la celda se encuentran en contacto con reservorios a distintas temperaturas, se manifiesta el efecto Seebeck, por lo tanto puede ser utilizada como generador de electricidad. An\'alogamente, al hacer pasar una corriente $I$ por la misma, las uniones sobre una de las caras absorber\'an y las contrarias liberar\'an calor (efecto Peltier), operando como una m\'aquina frigor\'ifica o una fuente de calor.
+Si ambas caras de la celda se encuentran en contacto con reservorios a distintas temperaturas, se manifiesta el efecto Seebeck, por lo tanto puede ser utilizada como generador de electricidad. An\'alogamente, al hacer pasar una corriente $I$ por la misma, las uniones sobre una de las caras absorber\'an y las contrarias liberar\'an calor (efecto Peltier), operando como una m\'aquina frigor\'ifica o una fuente de calor.\\
 
-Por \'ultimo, para calcular el rendimiento de la celda como maquina termica, utilizando las ecuaciones (\ref{eq:peltier}) y (\ref{eq:joule}) se obtiene que el calor intercambiado en cada una de las caras (en r\'egimen estacionario) es:
+Por \'ultimo, para calcular el rendimiento de la celda como maquina termica, utilizando las ecuaciones (\ref{eq:peltier}) y (\ref{eq:joule}) se obtiene que el calor intercambiado en cada una de las caras (en r\'egimen estacionario) es [5]:
 
 \begin{equation}
 \label{eq:qcaras}
@@ -188,7 +187,7 @@ Por \'ultimo, para calcular el rendimiento de la celda como maquina termica, uti
 \end{equation}
 
 
-donde $\alpha$ y $K$ contienen la contribuci\'on de todos los elementos conductores al efecto Peltier y a la difusi\'on de calor, y $i = \{1,2\}$. De la misma forma, la potencia el\'ectrica aplicada esta dada por la siguiente ecuaci\'on:
+donde $\alpha$ y $K$ contienen la contribuci\'on de todos los elementos conductores al efecto Peltier y a la difusi\'on de calor, y $i = \{1,2\}$. De la misma forma, la potencia el\'ectrica aplicada esta dada por la siguiente ecuaci\'on [6]:
 
 \begin{equation}
 \label{eq:potencia}
@@ -216,35 +215,23 @@ siendo $\dot{Q_{f}}$ y $\dot{Q_{c}}$ el calor intercambiado por la cara fria y c
 
 \section{Dispositivo experimental}
 
-Los instrumentos de laboratorio utilizados fueron:
-\begin{itemize}
-\item PC con software MATLAB para la adquisici\'on y an\'alisis de los datos.
-\item Placa de adquisici\'on de datos National Instruments NI-USB 6120.
-\item Celda Peltier Marlow Industries DT3-6.
-\item Dos sensores de temperatura LM-35.
-\item Generador de corriente continua LG GP4303D.
-\item Unidad de medici\'on de corriente/voltaje Agilent B2901A.
-\item Cables Banana-Banana y Banana-Cocodrilo.
-\end{itemize}
+El primer armado experimental consisti\'o en una celda Peltier; en cada una de sus caras se ubicaron dos sensores de temperatura LM-35 alimentados con 7,5 V mediante un generador de corriente continua LG GP4303D. Estos estaban dentro de un hueco en dos cubos de aluminio que actuaban como disipador de calor. La celda fue alimentada con el generador de corriente continua Agilent B2901A, el cual tambi\'en permiti\'o la obtenci\'on del voltaje y corriente circulando por el circuito compuesto por la celda.\\
 
-
-El armado experimental consisti\'o en una celda Peltier; en cada una de sus caras se ubicaron dos sensores de temperatura LM-35 alimentados con 7,5 V, los cuales estaban dentro de un hueco en dos cubos de aluminio que actuaban como disipador de calor. La celda fue alimentada con el generador de corriente/voltaje, el cual tambi\'en permiti\'o la obtenci\'on del voltaje y corriente circulando por el circuito compuesto por la celda.
-
-A su vez, se tomaron las mediciones de los sensores LM-35 a trav\'es de la placa de adquisici\'on de datos hacia una PC; lo que permiti\'o determinar la temperatura de cada sensor. La relaci\'on entre voltaje de salida y temperatura medida en cada uno de ellos es de 10 mV/\degree C, su rango de medici\'on es de -55 \degree C (-550 mV) a 150 \degree C (1500 mV) y la precisi\'on a temperatura ambiente es de 0,5 \degree C. En la siguiente figura se muestra un esquema del dispositivo utilizado:
+A su vez, se tomaron las mediciones de los sensores LM-35 a trav\'es de la placa de adquisici\'on de datos National Instruments NI-USB 6120 hacia una PC con MATLAB; lo que permiti\'o determinar la temperatura de cada sensor. La relaci\'on entre voltaje de salida y temperatura medida en cada uno de ellos es de 10 mV/\degree C, su rango de medici\'on es de -55 \degree C (-550 mV) a 150 \degree C (1500 mV) y la precisi\'on a temperatura ambiente es de 0,5 \degree C. En la siguiente figura se muestra un esquema del dispositivo utilizado:
 
 \begin{figure}[H]
 \includegraphics[width=\linewidth]{dispexp.jpg}
-\caption{Esquema del dispositivo experimental utilizado. Se puede apreciar el esquema interno donde se encuentra ubicada la celda Peltier.}
+\caption{Esquema del primer dispositivo experimental utilizado. Se puede apreciar el detalle del armado interno donde se encuentra ubicada la celda Peltier.}
 \label{fig:dispexp}
 \end{figure}
 
-Los datos obtenidos en esta primera parte (voltaje, corriente y temperaturas) permitieron obtener el coeficiente de Seebeck $\alpha$, la resistencia $R$, el valor de corriente $I_{m\'ax}$ para el cual la celda llega al m\'aximo rendimiento.
+Los datos obtenidos en esta primera parte (voltaje, corriente y temperaturas) permitieron obtener la evoluci\'on de la temperatura en funci\'on del tiempo y el coeficiente de Seebeck $\alpha$.\\
 
-Finalmente, para obtener la eficiencia, el rendimiento y la conductividad t\'ermica $K$ de la celda Peltier como maquina frigor\'ifica, calculando la potencia entregada a la misma y la absorbida por la cara fr\'ia. La primera se obtuvo como la corriente circulante por la tensi\'on entre las placas y para la segunda se coloc\'o un disipador con un sensor de temperatura LM-35 sobre la cara fr\'ia (todo el conjunto encerrado en un termo de aluminio), pudiendo obtener el cambio de temperatura en el tiempo de la misma a trav\'es de la placa de adquisici\'on. En la siguiente figura se esquematiza el armado experimental para esta parte del trabajo:
+Finalmente, para obtener el rendimiento como m\'aquina frigor\'ifica, la conductividad t\'ermica $K$ y la resistencia $R$ de la celda Peltier, se calcul\'o la potencia entregada a la misma y la absorbida por la cara fr\'ia. La primera se obtuvo como la corriente circulante por la tensi\'on entre las placas (la cara caliente de la celda se ubic\'o sobre un bloque de hierro para que est\'e a temperatura constante) y para la segunda se coloc\'o un disipador de aluminio con un sensor de temperatura LM-35 sobre la cara fr\'ia (todo el conjunto encerrado en un termo de aluminio), pudiendo obtener el cambio de temperatura en el tiempo de la misma a trav\'es de la placa de adquisici\'on. En la siguiente figura se esquematiza el armado experimental para esta parte del trabajo:
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{dispexp.jpg}
-\caption{Esquema del dispositivo experimental utilizado. Se puede apreciar el esquema interno donde se encuentra ubicada la celda Peltier.}
+\includegraphics[width=\linewidth]{dispexp2.jpg}
+\caption{Esquema del segundo dispositivo experimental utilizado.}
 \label{fig:dispexp2}
 \end{figure}
 
@@ -252,80 +239,63 @@ Finalmente, para obtener la eficiencia, el rendimiento y la conductividad t\'erm
 %------------------------------------------------
 \section{Resultados y an\'alisis}
 
-Para poder estimar la frecuencia de resonancia del cristal de cuarzo, en primer lugar se utiliz\'o el generador de funciones para realizar manualmente un barrido de frecuencias y el osciloscopio para poder visualizar la amplitud de la onda y obtener la campana de resonancia de dicho cristal, como muestra la siguiente figura:
-
-\begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Campana de resonancia obtenida mediante un barrido de frecuencias manual con el osciloscopio.}
-\label{fig:detallecampanaOSC}
-\end{figure}
-
-Luego, se pudo calcular la frecuencia de resonancia y el ancho de la campana, dando como resultado $\omega_{r}$ = (50108 $\pm$ 7) Hz y $\Delta \omega$ = (6,15 $\pm$ 0,10) Hz respectivamente. Con estos datos, se obtuvo el factor de m\'erito del circuito, $Q$ = 8147 $\pm$ 70. \newline
-
-\par
-Adem\'as, se intent\'o calcular la frecuencia de antirresonancia utilizando este m\'etodo; pero al aumentar la escala en el gr\'afico anterior en la zona correspondiente a dicha frecuencia (50,025 kHz $< \omega_{a} <$ 50,03 kHz), notamos que por la baja resoluci\'on del osciloscopio no se pudo obtener un valor confiable para $\omega_{a}$. \newline
-
-
-\par
-Posteriormente se analizaron los datos obtenidos por el amplificador lock-in. Se realizaron varios barridos de frecuencia con distintos niveles de resoluci\'on en la variaci\'on de la frecuencia, procurando que el barrido sea fino en los rangos que m\'as nos interesaron, es decir cerca a la resonancia y la antirresonancia, previamente estimadas. Se trabaj\'o con todas las mediciones en una sola base de datos y para determinar la frecuencia de resonancia se utilizaron tres m\'etodos, el primero consisti\'o en ajustar la curva de voltaje a una curva lorentziana, ajuste del cual se obtuvo que $\omega_{r}$ = (50097,85 $\pm$ 0,01) Hz (la bondad del ajuste fue $R^{2}$ = 0,992), como muestra la Figura \ref{fig:ajuste}:
+Lo primero que se pudo observar de forma intuitiva fue que efectivamente, al pasar una corriente por la celda Peltier se produc\'ia una diferencia de temperatura en sus caras, as\'i que se tom\'o registro de dichas temperaturas. En la Figura \ref{fig:temps_C} se puede observar ese registro de y adem\'as, la diferencia de temperaturas en color rojo. Cabe destacar que, como s\'olo nos interesaba observar este fen\'omeno cualitativamente, el gr\'afico se encuentra en grados Celsius mientras que el resto de los resultados los presentaremos en grados Kelvin. Esto se debe a que se puede observar m\'as f\'acilmente que a $\Delta T \approx$ 22,7 \degree C (mismo valor para \degree K), es predominante el efecto Joule y ambas caras de la celda comienzan a calentarse, manteniendo asi una diferencia de temperatura constante. 
 
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Ajuste a una funci\'on lorentziana del voltaje con respecto a la frecuencia.}
-\label{fig:ajuste}
+\includegraphics[width=\linewidth]{peltier_temps_C.png}
+\caption{Medici\'on de la temperatura mientras ocurre el efecto Peltier. La curva azul es la temperatura de la cara caliente de la celda, mientras que la curva verde es la temperatura de la cara caliente y la curva roja es la diferencia de temperatura.}
+\label{fig:temps_C}
 \end{figure}
 
 
-El segundo m\'etodo consisti\'o en encontrar la frecuencia para la cual la transferencia de energ\'ia es m\'axima considerando que la transferencia es directamente proporcional al voltaje registrado,  Figura \ref{fig:detalleRESamp}. Se obtuvo que $\omega_{r}$ = (50097,9 $\pm$ 0,3) Hz y en el caso de la antirresonancia se determin\'o la frecuencia en la cual la transferencia de energ\'ia es m\'inima, obteni\'endose que $\omega_{a}$ = (50284,4 $\pm$ 0,3) Hz, Figura \ref{fig:detalleANTamp}.
+Cuando las caras de la celda llegaron una diferencia de temperatura de $\Delta T \approx$  22,7 \degree C, se quit\'o la fuente de corriente y se observ\'o el efecto Seebeck. El gr\'afico \ref{fig:seebeck} muestra los datos obtenidos de la variaci\'on del voltaje con respecto a la variaci\'on de la diferencia de temperatura entre las caras. Este comportamiento lineal es justamente lo que predijo la aproximaci\'on de la ecuaci\'on (\ref{eq:seebeck2}), en el que la pendiente es el coeficiente de Seebeck. Se realizo un ajuste lineal obteniendo que dicho coeficiente es $\alpha = (6134 \pm 9) * 10^{-6}$ $\frac{V}{\degree K}$.
 
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Detalle de la campana de resonancia, donde la l\'inea punteada indica el voltaje m\'aximo y la l\'inea horizontal indica los puntos para los cuales el voltaje m\'aximo se reduce a la mitad.}
-\label{fig:detalleRESamp}
+\includegraphics[width=\linewidth]{seebeck_ajuste.png}
+\caption{Ajuste lineal de la variaci\'on de la diferencia de potencial con respecto a la variaci\'on de la diferencia de temperaturas en el efecto Seebeck.}
+\label{fig:seebeck}
 \end{figure}
+
+
+En la medici\'on del rendimiento detallada en la secci\'on de Dispositivo Experimental se registr\'o la variaci\'on de la diferencia de temperatura con respecto al tiempo, la cual se puede observar en la Figura \ref{fig:joule}. La potencia de la cara fr\'ia $P_{F}$ est\'a dada por la siguiente ecuaci\'on, donde $m_{Al} = (0,025 \pm 0,001)$ g es la masa del disipador de aluminio utilizado y $c_{Al} = 0,89$ $\frac{J}{g \degree K}$ es su calor espec\'ifico.
+
+
+\begin{equation}
+\label{eq:pf}
+P_{F} = m_{Al} c_{Al} \frac{\Delta T}{\Delta t}
+\end{equation}
+
+
+Mediante los datos obtenidos para $\alpha$ de la Figura \ref{fig:seebeck}, teniendo en cuenta el \'area de la celda $A = 0,0004 $ $m^{2}$ y la distancia entre las caras $d = 0,003$ m; y bas\'andonos en la ecuaci\'on (\ref{eq:pf}), se realiz\'o un ajuste lineal en el cual se obtuvo la potencia absorbida por la cara fr\'ia, si adem\'as comparamos esta potencia con la potencia entregada a la celda obtenemos, mediante la ecuaci\'on (\ref{eq:rendimiento}), un coeficiente de rendimiento como m\'aquina frigor\'ifica de  $COP = 2,795$. Al comparar este valor con el $COP_{ideal} = \frac{T_{F}}{T_{C}-T_{F}}$, obtenemos un rendimiento del $9.34 \%$ con respecto al rendimiento ideal como maquina frigorifica. 
 
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Detalle del intervalo donde se produce la antirresonancia indicada por la l\'inea punteada.}
-\label{fig:detalleANTamp}
+\includegraphics[width=\linewidth]{joule_ajuste.png}
+\caption{Ajuste lineal de la variaci\'on de temperatura con respecto al tiempo en la medici\'on del rendimiento como m\'aquina frigor\'ifica.}
+\label{fig:joule}
 \end{figure}
 
-El \'ultimo m\'etodo que utilizamos consisti\'o en analizar la fase en funci\'on de la frecuencia, considerando que cuando la fase llega a cero de forma descendente corresponde a la fase en la frecuencia de resonancia y que cuando la fase pasa por cero de forma ascendente es que corresponde a la frecuencia de antirresonancia. Se obtuvo que la frecuencia de resonancia es $\omega_{r}$ = (50097,25 $\pm$ 0,05) Hz y que $\omega_{a}$ = (50284,65 $\pm$ 0,05) Hz, en la Figura \ref{fig:fase} se ve la curva completa mientras que en las Figuras \ref{fig:bajada} y \ref{fig:subida} se ven en detalle los puntos donde la diferencia de fase pasa por cero. 
+Para encontrar la resistencia de la placa se utiliz\'o la ecuaci\'on (\ref{eq:potencia}), obteniendo $R = (2,546 \pm 0.081)$ $\Omega$. Finalmente, una vez obtenidos $\alpha$, $R$, $P_{F}$ y adem\'as utilizando los medidas caracteristicas de la celda Peltier, se obtuvo mediante las ecuaciones (\ref{eq:joule}) y (\ref{eq:qcaras}) un valor para la conductividad t\'ermica de  $K = (0,494 \pm 0,110) \frac{W}{m^{2} K}$. Por \'ultimo, la Figura \ref{fig:rendimiento} muestra de forma cualitativa del rendimiento en funci\'on de la variaci\'on de la temperatura. 
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Diferencia de fase entre la se\~nal de entrada al piezoel\'ectrico y la se\~nal de salida con respecto a la frecuencia.}
-\label{fig:fase}
+\includegraphics[width=\linewidth]{curva_rendimiento.png}
+\caption{Rendimiento de la celda con respecto a la diferencia de temperatura entre sus caras. Se observa que hay un m\'aximo aproximadamente en 9\%. }
+\label{fig:rendimiento}
 \end{figure}
-
-\begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Detalle de la diferencia de fase en el intervalo donde se produce la resonancia indicada por la l\'inea punteada.}
-\label{fig:bajada}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics[width=\linewidth]{peltier.jpg}
-\caption{Detalle de la diferencia de fase en el intervalo donde se produce la antirresonancia indicada por la l\'inea punteada.}
-\label{fig:subida}
-\end{figure}
-
-Para obtener $\Delta \omega$ se calcularon las frecuencias para las cuales la amplitud m\'axima se habia reducido a la mitad, figura \ref{fig:detalleRESamp}, eso nos di\'o una idea del ancho de la campana $\Delta \omega$ = (5,90 $\pm$ 0,01) Hz. Si comparamos el valor de la frecuencia de resonancia con el ancho de la campana obtenemos el factor de m\'erito, el cual cuanto m\'as grande es, nos indica que m\'as aguda es la campana y que por lo tanto el material es m\'as \'util como resonador en una frecuencia espec\'ifica; en este caso se encontr\'o que el factor de m\'erito es $Q$ = 8491 $\pm$ 5.
-
-Los par\'ametros del circuito que modela el comportamiento del piezoel\'ectrico fueron determinados mediante las ecuaciones (\ref{eq:transferenciar}), (\ref{eq:merito}), (\ref{eq:wr}) y (\ref{eq:wa}), obteni\'endose que la resistencia es $R$ = (13,65 $\pm$ 0,09) K$\Omega$, la inductividad $L$ = (3161 $\pm$ 5) H, la capacitancia es $C$ = (0,126 $\pm$ 0,004) pF; y que la capacitancia producida por la capa de oro que envuelve al piezoel\'ectrico es de $C_{2}$ = (16,9 $\pm$ 0,5) pF.
 
 %------------------------------------------------
 
 \section{Conclusiones}
 
-Se puede observar que los distintos m\'etodos para determinar la frecuencia de resonancia var\'ian en d\'ecimas de Hz, por lo cual consideramos que la experiencia tuvo bastante precisi\'on pues se trabaj\'o con frecuencias del \'orden de los kHz; incluso en un primer barrido manual con el osciloscopio. \\
+En este trabajo se realiz\'o la caracterizaci\'on una celda Peltier utilizando dos armados experimentales, el primero para el c\'alculo de su coeficiente de Seebeck $\alpha$ mediante la evoluci\'on de la temperatura en el tiempo, y el segundo para obtener la resistencia $R$, conductividad t\'ermica $K$ y el rendimiento de la celda como m\'aquina frigor\'ifica.\\
 
-Sobre la frecuencia de antirresonancia pudimos notar que es preciso un instrumento lo bastante sensible como para poder determinarla, pues el barrido que se realiz\'o con el osciloscopio registraba bastante ruido por lo que no se pudo trabajar con esos datos para determinar dicha frecuencia, mientras que con los datos obtenidos con el amplificador lock-in se pudo obtener un perfil de la curva de voltaje mucho m\'as limpio en comparaci\'on al del osciloscopio y m\'as aun tomando en cuenta el registro de la diferencia de fase que nos permiti\'o el amplificador. \\
+Durante la evoluci\'on de la temperatura, la cara caliente aumenta su temperatura de manera continua, mientras que la cara fr\'ia, en un primer momento disminuye su valor hasta llegar a un valor m\'inimo para luego aumentar, evidenciando el efecto Joule. Al alcanzar las caras una $\Delta T \approx$  22,7 \degree C, se quit\'o la fuente de corriente y se observ\'o el efecto Seebeck; para el cual se realizo un ajuste lineal a los datos recolectados ($\Delta V$ en funci\'on de $\Delta T$), obteniendo $\alpha = (6134 \pm 9) * 10^{-6}$ $\frac{V}{\degree K}$. Si bien el coeficiente Seebeck depende de la temperatura; en el intervalo de tiempo trabajado ($\approx$ 16 min) se comporta de manera constante.\\	
 
-El alto factor de m\'erito que obtuvimos nos indica que la campana es bastante aguda, es decir que el ancho de la campana es peque\~no en comparaci\'on a la altura; por lo cual concluimos que el ancho de banda en el cual resuena material piezoel\'ectrico es m\'as estrecho, o visto de otra manera, posee una baja tasa de p\'erdida de energ\'ia en relaci\'on a la almacenada por el mismo.
+Para la medici\'on del rendimiento se registr\'o la variaci\'on de la diferencia de temperatura con respecto al tiempo. Se obtuvo ademas la potencia de la cara fr\'ia $P_{F}$ en funcion de estos par\'ametros y la potencia de la celda como el producto entre la corriente y el voltaje entregado por el generador de corriente continua, obteniendo un coeficiente de rendimiento como m\'aquina frigor\'ifica de $COP = 2,795$, es decir, un $9.34 \%$ del rendimiento de una maquina ideal como maquina frigorifica.\\
+
+Por \'ultimo, con los datos obtenidos y utilizando la ecuaci\'on (\ref{eq:potencia}) se obtuvo la resistencia de la celda $R = (2,546 \pm 0.081)$ $\Omega$. Utilizando este valor y los hallados para $\alpha$, $P_{F}$ y las medidas de la celda (\'area $A$ y distancia entre caras $d$), se encontr\'o el valor para la conductividad t\'ermica de  $K = (0,494 \pm 0,110) \frac{W}{m^{2} K}$, resultando un poco m\'as baja que la del agua; comparable con materiales como ladrillo refractario o mica.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -334,8 +304,8 @@ El alto factor de m\'erito que obtuvimos nos indica que la campana es bastante a
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
 
-\bibitem{eq:oderlc} R. K. Nagle, E. B. Saff, A. D. Snider, \textit{Ecuaciones diferenciales y problemas con valores en la frontera}, $4^{ta}$ edici\'on, Pearson Educaci\'on M\'exico, 2005, p\'ag. 285
-\bibitem{eq:props} http://materias.df.uba.ar/labo4Ba2016c1/files/2014/03/Piezo.pdf 
+[1] -- [6] http://materias.df.uba.ar/labo4Ba2016c1/files
+           /2016/03/Guia\_L4\_Peltier.pdf
  
 \end{thebibliography}
 
